@@ -6,6 +6,7 @@
   "author": "Ayodeji Abodunrin <aboayosam@gmail.com>",
   "dependencies": {
     "@fontsource/galada": "^4.1.0",
+    "@fontsource/molle": "^4.1.0",
     "fontsource-open-sans": "^4.0.0",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.5.0",

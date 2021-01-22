@@ -12,8 +12,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "@fontsource/galada"
 import "fontsource-open-sans/";
+// import "@fontsource/molle"
 
 import "./layout.css"
+import colors from "../config/colors"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -34,6 +36,7 @@ const Layout = ({ children }) => {
           margin: `0 auto`,
           maxWidth: 1440,
           padding: `0 1.2875rem 1.55rem`,
+          backgroundColor: `#0D0D0D`,
         }}
       >
         <main>{children}</main>

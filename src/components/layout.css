@@ -1,5 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Galada&display=swap'); */
 
+@import url('https://fonts.googleapis.com/css2?family=Molle:ital@1&display=swap');
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -14,14 +16,14 @@ body {
   color: #fff;
   font-family: georgia, serif;
   font-family: 'Galada', cursive;
-  font-weight: normal;
+  font-weight: 100;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-  background-color: #0D0D0D;
+  background-color: #000;
 }
 article,
 aside,
@@ -600,6 +602,11 @@ pre tt:after {
   }
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-family: "Galada", cursive;
+}
+
+h3 {
+  font-family: "Molle";
+  font-weight: 400;
 }
