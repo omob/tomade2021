@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 import Video from "../components/video"
 import colors from "../config/colors"
 
-
 const Container = styled.div`
   .position-relative {
     position: relative;
@@ -140,9 +139,10 @@ const SectionThree = styled.div`
         color: ${colors.black};
         font-family: "Open Sans";
         font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 2px;
+        font-weight: 600;
+        letter-spacing: 1px;
         line-height: 1.3em;
+        font-style: italic;
       }
     }
   }
@@ -152,6 +152,50 @@ const SectionThree = styled.div`
     letter-spacing: 5px;
     top: -15px;
     position: relative;
+  }
+`
+
+const SectionFour = styled.div`
+  padding-top: 5em;
+  padding-bottom: 5em;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    font-size: 36px;
+    letter-spacing: 5px;
+  }
+
+  .infoWrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .infoWrapper div,
+  div.rsvp {
+    background-color: ${colors.white};
+    color: ${colors.black};
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    margin: 2em;
+
+    h4 {
+      font-size: 16px;
+      font-family: "Molle";
+      font-weight: 100;
+    }
+
+    p {
+      font-size: 14px;
+      font-family: "Open Sans";
+      line-height: 1.4em;
+      font-weight: 600;
+    }
+  }
+  div.rsvp {
+    margin: 2em auto;
   }
 `
 
@@ -309,6 +353,48 @@ const IndexPage = ({data}) => {
             </div>
           </div>
         </SectionThree>
+        <SectionFour>
+          <h3>THE WEDDING</h3>
+          <img src={require("../images/sec4.png")} height="auto" style={{}} />
+
+          <div className="infoWrapper">
+            <div>
+              <h4>Engagement Ceremony</h4>
+              <p>
+                Iyeru Ideal Hall, Opposite Ibikunle Lawal School, Parakin
+                Estate, Ile-Ife, Osun State. <br />
+                Time: 7am <br />
+                Date: 27 March, 2021
+              </p>
+            </div>
+            <div>
+              <h4>Solemnization of Holy Matrimony</h4>
+              <p>
+                Christ Resurrection Chapel. 15, Afolabi Ajomale Street, Parakin
+                Layout, Ile-Ife, Osun State.
+                <br />
+                Time: 12pm <br />
+                Date: 27 March, 2021
+              </p>
+            </div>
+            <div>
+              <h4>Reception</h4>
+              <p>
+                IIyeru Ideal Hall, Opposite Ibikunle Lawal School, Parakin
+                Estate, Ile-Ife, Osun State. <br />
+                Time: 2pm
+              </p>
+            </div>
+          </div>
+          <div className="rsvp">
+            <h4>RSVP</h4>
+            <p>
+              Akinbode Oloidi Jnr: 08033019048
+              <br /> Oluwaseyi Oloidi: 08104198032 <br /> Bright Musa:
+              08033151464 <br /> Ella Chioma: 08108675212
+            </p>
+          </div>
+        </SectionFour>
       </Container>
     </Layout>
   )

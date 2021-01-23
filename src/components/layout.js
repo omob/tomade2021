@@ -42,6 +42,7 @@ const Layout = ({ children }) => {
         <footer
           style={{
             marginTop: `2rem`,
+            clear: `both`
           }}
         >
           © {new Date().getFullYear()}, Built with
