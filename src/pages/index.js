@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Video from "../components/video"
 import colors from "../config/colors"
 
 
@@ -105,11 +106,55 @@ const SectionTwo = styled.div`
           font-size: 14px;
           letter-spacing: 2px;
           width: 80%;
+          line-height: 20px;
         }
       }
     }
   }
+
 `
+const SectionThree = styled.div`
+  ${"" /* align-items: center; */}
+
+  .proposalWrapper {
+    background-color: ${colors.black};
+    position: relative;
+
+    .speech-box {
+      max-width: 419px;
+      background-color: ${colors.white};
+      padding: 20px 30px 0px;
+      position: absolute;
+      top: 30%;
+      left: 10px;
+
+      h3 {
+        font-size: 16px;
+        color: ${colors.dark};
+        top: 0;
+        padding-top: 20px;
+        letter-spacing: 0;
+      }
+
+      p {
+        color: ${colors.black};
+        font-family: "Open Sans";
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        line-height: 1.3em;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 36px;
+    letter-spacing: 5px;
+    top: -15px;
+    position: relative;
+  }
+`
+
 const CountdownContainer = styled.div`
   border: 5px solid;
   width: 265px;
@@ -123,6 +168,8 @@ const CountdownContainer = styled.div`
     padding: 10px;
   }
 `;
+
+
 
 const IndexPage = ({data}) => {
 
@@ -230,6 +277,38 @@ const IndexPage = ({data}) => {
             </div>
           </div>
         </SectionTwo>
+
+        <SectionThree>
+          <img src={require("../images/sec3.png")} height="auto" style={{}} />
+          <h3>THE PROPOSAL</h3>
+          <div className="proposalWrapper">
+            <Video
+              videoSrcURL={require("../assets/video/sam proposal.mp4")}
+              videoTitle="Samson's Proposal"
+            />
+
+            <div className="speech-box">
+              <h3>THE PROPOSAL SPEECH</h3>
+              <p> Oluwatomisin!!!! (God is enough for me) </p>
+              <p>
+                You’ve been there through the “Not so good times”. You’ve
+                trusted my judgments and seen me through it even when it looked
+                like the path wasn’t clear. You’ve indeed been patient!!!
+                Patient with quite a number of things. Our path hasn’t been so
+                smooth but it’s been interesting. Quite a number of things, I’ve
+                learnt from your quiet rebuke (part of which is being
+                SENsITIVE). Thank you for bringing me PEACE! I DO NOT take our
+                love for granted and that’s why I’ve chosen this day to ask you
+                my Choco candy! Will you marry me??????
+              </p>
+              <img
+                src={require("../images/sec2.png")}
+                height="auto"
+                width={50}
+              />
+            </div>
+          </div>
+        </SectionThree>
       </Container>
     </Layout>
   )
