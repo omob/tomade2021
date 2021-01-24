@@ -176,9 +176,9 @@ const SectionFour = styled.div`
   div.rsvp {
     background-color: ${colors.white};
     color: ${colors.black};
-    padding: 20px;
+    padding: 30px 20px;
     width: 300px;
-    height: 200px;
+    height: 220px;
     margin: 2em;
 
     h4 {
@@ -190,12 +190,20 @@ const SectionFour = styled.div`
     p {
       font-size: 14px;
       font-family: "Open Sans";
-      line-height: 1.4em;
+      line-height: 1.6em;
       font-weight: 600;
     }
   }
   div.rsvp {
     margin: 2em auto;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      opacity: .5
+    }
   }
 `
 
@@ -389,9 +397,13 @@ const IndexPage = ({data}) => {
           <div className="rsvp">
             <h4>RSVP</h4>
             <p>
-              Akinbode Oloidi Jnr: 08033019048
-              <br /> Oluwaseyi Oloidi: 08104198032 <br /> Bright Musa:
-              08033151464 <br /> Ella Chioma: 08108675212
+              <a href="tel:08033019048">Akinbode Oloidi Jnr: 08033019048 </a>
+              <br />
+              <a href="tel:08104198032">Oluwaseyi Oloidi: 08104198032 </a>
+              <br />
+              <a href="tel:08033151464">Bright Musa: 08033151464</a> 
+              <br />
+              <a href="tel:08108675212"> Ella Chioma: 08108675212</a>
             </p>
           </div>
         </SectionFour>

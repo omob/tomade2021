@@ -16,7 +16,21 @@ import "fontsource-open-sans/";
 
 import "./layout.css"
 import colors from "../config/colors"
+import styled from "styled-components"
 
+
+
+const Footer = styled.footer`
+margin-top: 2rem;
+text-align: center;
+padding-top: 20px;
+background-color: ${colors.black};
+font-size: 14px;
+
+a {
+  color: inherit;
+}
+`
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -39,16 +53,14 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-            clear: `both`
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <Footer>
+          #Tomade © {new Date().getFullYear()}
+          <p>
+            Built by
+            {` `}
+            <a href="https://www.deevcorp.com">DeevCorp Digital Agency</a>
+          </p>
+        </Footer>
       </div>
     </>
   )
