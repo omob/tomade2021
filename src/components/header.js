@@ -6,17 +6,17 @@ import React from "react"
 import colors from "../config/colors";
 
 const HeaderWrapper = styled.header`
-  position: relative;
-  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: ${colors.dark};
+  max-width: 1440px;
+  margin: auto;
 `
 
 const NavBar = styled.nav`
-  margin: 0 auto;
-  max-width: 1280px;
   padding: 20px;
-  grid-template-columns: 1fr;
   height: 80px;
-
   & > ul {
     display: flex;
     margin: 0;
@@ -39,11 +39,12 @@ const NavBar = styled.nav`
        opacity: .6;
      }
     }
+    
     li.gift {
-       border: 2px solid ${colors.lightDanger};
+       border: 2px solid ${colors.primary};
        width: 90px;
        text-align: center;
-       background-color: ${colors.lightDanger};
+       background-color: ${colors.primary};
     }
 
     li.gift:hover {

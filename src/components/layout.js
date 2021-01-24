@@ -28,7 +28,7 @@ background-color: ${colors.black};
 font-size: 14px;
 
 a {
-  color: inherit;
+  color: ${colors.secondary};
 }
 `
 const Layout = ({ children }) => {

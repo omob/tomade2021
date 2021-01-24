@@ -21,36 +21,55 @@ const Container = styled.div`
     text-align: center;
 
     .tagline {
-      color: ${colors.secondary};
+      color: ${colors.primary};
       text-align: left !important;
       display: block;
       font-weight: 100;
     }
 
-    .brideName, .groomName {
+    .brideName,
+    .groomName {
       font-weight: 400;
+      color: ${colors.secondary};
+      font-size: 64px;
     }
 
     .brideName {
-      font-size: 64px;
       margin-top: 40px;
       margin-bottom: 0;
     }
 
+    .brideName + span {
+      color: ${colors.white};
+      font-family: "Molle";
+      font-size: 24px;
+      left: -40px;
+      position: relative;
+      margin: 10px;
+      display: block;
+      font-weight: 100;
+    }
+
     .groomName {
-      font-size: 64px;
       margin: 20px;
       text-align: center;
       margin-bottom: 0;
+      text-indent: -30px;
+    }
+
+    .l-2 {
+      left: -20px;
+      position: relative;
     }
 
     .getting-married {
       font-weight: 300;
       font-size: 30px;
-      color: ${colors.lightDanger};
+      color: ${colors.white};
       margin-bottom: 15px;
       width: fit-content;
-      margin: auto;
+      margin: 10px auto;
+      letter-spacing: 4px;
     }
     .date {
       font-size: 14px;
@@ -58,14 +77,19 @@ const Container = styled.div`
       letter-spacing: 1px;
     }
   }
+
+  .section-title {
+    color: ${colors.secondary}
+  }
 `
 const SectionOne = styled.div`
   display: flex;
   align-items: center;
   height: 800px;
 
-  & > div {
+  & > div:first-child {
     padding: 20px;
+    padding-left: 6%;
   }
 `
 
@@ -79,7 +103,10 @@ const SectionTwo = styled.div`
   }
 
   div.section {
+    max-width: 1200px;
+    margin: auto;
     margin-top: 40px;
+
     .story {
       display: flex;
       margin-bottom: 30px;
@@ -104,7 +131,7 @@ const SectionTwo = styled.div`
           font-weight: 100;
           font-size: 14px;
           letter-spacing: 2px;
-          width: 80%;
+          width: 90%;
           line-height: 20px;
         }
       }
@@ -208,8 +235,8 @@ const SectionFour = styled.div`
 `
 
 const CountdownContainer = styled.div`
-  border: 5px solid;
-  width: 265px;
+  border: 3px solid;
+  width: 260px;
   margin: auto;
   padding: 10px;
   margin-top: 10px;
@@ -252,10 +279,10 @@ const IndexPage = ({data}) => {
           <div>
             <span className="tagline">#tomade2021</span>
             <h2 className="brideName">OLUWATOMISIN</h2>
-            <span style={{ color: "#A8A8A8", fontFamily: "Molle" }}>and</span>
+            <span>and</span>
             <h2 className="groomName">SAMSON</h2>
 
-            <div className="mt-3 ">
+            <div className="mt-4 l-2">
               <h2 className="getting-married position-relative">
                 <img
                   src={require("../images/rose.png")}
@@ -263,7 +290,7 @@ const IndexPage = ({data}) => {
                   height={46}
                   style={{
                     position: "absolute",
-                    right: -10,
+                    right: -5,
                     top: -55,
                     transform: "rotate(45deg)",
                   }}
@@ -287,7 +314,7 @@ const IndexPage = ({data}) => {
             height="auto"
             style={{}}
           />
-          <h3>OUR LOVE STORY</h3>
+          <h3 className="section-title">OUR LOVE STORY</h3>
           <div className="section">
             <div className="story">
               <div>
@@ -330,9 +357,9 @@ const IndexPage = ({data}) => {
           </div>
         </SectionTwo>
 
-        <SectionThree>
+        <SectionThree className="mt-4">
           <img src={require("../images/sec3.png")} height="auto" style={{}} />
-          <h3>THE PROPOSAL</h3>
+          <h3 className="section-title">THE PROPOSAL</h3>
           <div className="proposalWrapper">
             <Video
               videoSrcURL={require("../assets/video/sam proposal.mp4")}
@@ -362,7 +389,7 @@ const IndexPage = ({data}) => {
           </div>
         </SectionThree>
         <SectionFour>
-          <h3>THE WEDDING</h3>
+          <h3 className="section-title">THE WEDDING</h3>
           <img src={require("../images/sec4.png")} height="auto" style={{}} />
 
           <div className="infoWrapper">
@@ -401,7 +428,7 @@ const IndexPage = ({data}) => {
               <br />
               <a href="tel:08104198032">Oluwaseyi Oloidi: 08104198032 </a>
               <br />
-              <a href="tel:08033151464">Bright Musa: 08033151464</a> 
+              <a href="tel:08033151464">Bright Musa: 08033151464</a>
               <br />
               <a href="tel:08108675212"> Ella Chioma: 08108675212</a>
             </p>
