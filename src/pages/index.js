@@ -21,7 +21,7 @@ const Container = styled.div`
     text-align: center;
 
     .tagline {
-      color: ${colors.primary};
+      color: ${colors.light};
       text-align: left !important;
       display: block;
       font-weight: 100;
@@ -40,7 +40,7 @@ const Container = styled.div`
     }
 
     .brideName + span {
-      color: ${colors.white};
+      color: ${colors.light};
       font-family: "Molle";
       font-size: 24px;
       left: -40px;
@@ -75,6 +75,7 @@ const Container = styled.div`
       font-size: 14px;
       font-weight: 100;
       letter-spacing: 1px;
+      color: ${colors.primary}
     }
   }
 
@@ -153,17 +154,19 @@ const SectionThree = styled.div`
       position: absolute;
       top: 30%;
       left: 10px;
+      transition: .3s;
+      cursor: pointer;
 
       h3 {
         font-size: 16px;
-        color: ${colors.dark};
+        color: ${colors.primary};
         top: 0;
         padding-top: 20px;
         letter-spacing: 0;
       }
 
       p {
-        color: ${colors.black};
+        color: ${colors.primary};
         font-family: "Open Sans";
         font-size: 14px;
         font-weight: 600;
@@ -171,6 +174,10 @@ const SectionThree = styled.div`
         line-height: 1.3em;
         font-style: italic;
       }
+    }
+
+    .speech-box:hover {
+      opacity: .2;
     }
   }
 
