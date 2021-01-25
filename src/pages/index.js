@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Countdown from "../components/countdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video"
@@ -242,8 +243,7 @@ const SectionFour = styled.div`
 `
 
 const CountdownContainer = styled.div`
-  border: 3px solid;
-  width: 260px;
+  ${'' /* border: 3px solid;
   margin: auto;
   padding: 10px;
   margin-top: 10px;
@@ -252,7 +252,7 @@ const CountdownContainer = styled.div`
     font-size: 24px;
     margin-left: 10px;
     padding: 10px;
-  }
+  } */}
 `;
 
 
@@ -305,9 +305,8 @@ const IndexPage = ({data}) => {
                 ARE GETTING MARRIED
               </h2>
               <span className="date">27th March 2021</span>
-              <CountdownContainer>
-                <span>24</span>:<span>12</span>:<span>43</span>:<span>43</span>
-              </CountdownContainer>
+              <Countdown timeFormat="YYYY MM DD, h:mm a" 
+              timeTillDate="2021 03 27, 7:00am" />
             </div>
           </div>
           <div>
