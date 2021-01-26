@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from "moment";
 import styled from 'styled-components';
+import colors from '../config/colors';
 
 
 const Container = styled.div`
@@ -14,8 +15,8 @@ const CountdownWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
+  ${'' /* flex-wrap: wrap; */}
+  ${'' /* flex-direction: column; */}
 
   & .countdown-item {
     color: #fff;
@@ -32,46 +33,54 @@ const CountdownWrapper = styled.div`
     height: 100px;
 
     span {
-        color: #eee;
-        font-size: 12px;
-        font-weight: 600;
+        color: ${colors.secondary};
+        font-size: 10px;
         text-transform: uppercase;
     }
   }
 `
 
-function Countdown({ timeTillDate, timeFormat }) {
+function Countdown({ timeTillDate, onComplete }) {
   const [days, setDays] = useState()
   const [hours, setHours] = useState()
   const [minutes, setMinutes] = useState()
   const [seconds, setSeconds] = useState()
 
-  let interval;
+  
 
   useEffect(() => {
-    interval = setInterval(() => {
+    let interval = setInterval(() => {
 
-      const then = moment(timeTillDate, timeFormat)
-      const now = moment()
-      const countdown = moment(then - now);
-      const days = countdown.format("D")
-      const hours = countdown.format("HH")
-      const minutes = countdown.format("mm")
-      const seconds = countdown.format("ss")
+      const now = new Date().getTime();
+      let distance = new Date(timeTillDate).getTime() - now;
+
+     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+     const hours = Math.floor(
+       (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+     )
+     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+     const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
       setDays(days)
       setHours(hours)
       setMinutes(minutes)
       setSeconds(seconds)
-    }, 1000)
-  }, [interval])
+    }, 1000);
 
-  const daysRadius = mapNumber(days, 365, 0, 0, 360)
+    return () => {
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [])
+
+  const daysRadius = mapNumber(days, 30, 0, 0, 360)
   const hoursRadius = mapNumber(hours, 24, 0, 0, 360)
   const minutesRadius = mapNumber(minutes, 60, 0, 0, 360)
   const secondsRadius = mapNumber(seconds, 60, 0, 0, 360)
 
-  if (!seconds) {
+  if (days < 0 && hours < 0 && minutes < 0 && seconds < 0) {
+    onComplete();
     return null
   }
 

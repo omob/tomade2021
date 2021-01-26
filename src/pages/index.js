@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Countdown from "../components/countdown"
 import Layout from "../components/layout"
@@ -276,6 +276,10 @@ const IndexPage = ({data}) => {
   //     `)
 
   // console.log(getImage("sam"))
+  const [areMarried, setAreMarried] = useState(false);
+  const handleOnComplete = () => {
+    setAreMarried(true);
+  }
 
   return (
     <Layout>
@@ -302,11 +306,11 @@ const IndexPage = ({data}) => {
                     transform: "rotate(45deg)",
                   }}
                 />
-                ARE GETTING MARRIED
+                {areMarried && "ARE MARRIED!!! "}
+                {!areMarried && "ARE GETTING MARRIED" }
               </h2>
               <span className="date">27th March 2021</span>
-              <Countdown timeFormat="YYYY MM DD, h:mm a" 
-              timeTillDate="2021 03 27, 7:00am" />
+              <Countdown timeTillDate="Mar 27, 2021 7:00:00" onComplete={handleOnComplete} />
             </div>
           </div>
           <div>
