@@ -47,29 +47,28 @@ function Countdown({ timeTillDate, onComplete }) {
 
   useEffect(() => {
     let interval = setInterval(() => {
+      const now = new Date().getTime()
+      let distance = new Date(timeTillDate).getTime() - now
 
-      const now = new Date().getTime();
-      let distance = new Date(timeTillDate).getTime() - now;
-
-     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-     const hours = Math.floor(
-       (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-     )
-     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-     const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      )
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
       setDays(days)
       setHours(hours)
       setMinutes(minutes)
       setSeconds(seconds)
-    }, 1000);
+    }, 1000)
 
     return () => {
       if (interval) {
         clearInterval(interval)
       }
     }
-  }, [])
+  }, [timeTillDate])
 
   const daysRadius = mapNumber(days, 30, 0, 0, 360)
   const hoursRadius = mapNumber(hours, 24, 0, 0, 360)

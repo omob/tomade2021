@@ -5,6 +5,7 @@ import React from "react"
 
 import colors from "../config/colors";
 
+
 const HeaderWrapper = styled.header`
   display: flex;
   justify-content: flex-end;
@@ -35,7 +36,8 @@ const NavBar = styled.nav`
      a {
         color: inherit;
         text-decoration: none;
-     }:hover {
+     }
+     a:hover {
        opacity: .6;
      }
     }
@@ -51,10 +53,6 @@ const NavBar = styled.nav`
       opacity: .6;
     }
 `
-const Logo = styled.img`
-  height: 85px;
-  width: auto;
-`
 
 const Header = ({ siteTitle }) => {
   return (
@@ -62,13 +60,13 @@ const Header = ({ siteTitle }) => {
       <NavBar>
         <ul>
           <li>
-            <Link>The Story</Link>
+            <Link to={""}>The Story</Link>
           </li>
           <li>
-            <Link>Proposal</Link>
+            <Link to={""}>Proposal</Link>
           </li>
           <li>
-            <Link>Gallery</Link>
+            <Link to={""}>Gallery</Link>
           </li>
           <li className="gift">
             <Link to={"/gift"}>Gift US</Link>

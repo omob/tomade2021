@@ -76,13 +76,21 @@ const Container = styled.div`
       font-size: 14px;
       font-weight: 100;
       letter-spacing: 1px;
-      color: ${colors.primary}
+      color: ${colors.primary};
     }
   }
 
   .section-title {
-    color: ${colors.secondary}
+    color: ${colors.secondary};
   }
+  ${'' /* @media (max-width: 550px) {
+    $ {
+      .brideName,
+      .groomName {
+        font-size: 34px;
+      }
+    }
+  } */}
 `
 const SectionOne = styled.div`
   display: flex;
@@ -241,22 +249,6 @@ const SectionFour = styled.div`
     }
   }
 `
-
-const CountdownContainer = styled.div`
-  ${'' /* border: 3px solid;
-  margin: auto;
-  padding: 10px;
-  margin-top: 10px;
-
-  & span {
-    font-size: 24px;
-    margin-left: 10px;
-    padding: 10px;
-  } */}
-`;
-
-
-
 const IndexPage = ({data}) => {
 
   // const getImage = (name) => 
@@ -299,6 +291,7 @@ const IndexPage = ({data}) => {
                   src={require("../images/rose.png")}
                   width={41}
                   height={46}
+                  alt=""
                   style={{
                     position: "absolute",
                     right: -5,
@@ -368,7 +361,7 @@ const IndexPage = ({data}) => {
         </SectionTwo>
 
         <SectionThree className="mt-4">
-          <img src={require("../images/sec3.png")} height="auto" style={{}} />
+          <img src={require("../images/sec3.png")} alt={""} height="auto" style={{}} />
           <h3 className="section-title">THE PROPOSAL</h3>
           <div className="proposalWrapper">
             <Video
@@ -394,6 +387,7 @@ const IndexPage = ({data}) => {
                 src={require("../images/sec2.png")}
                 height="auto"
                 width={50}
+                alt=""
               />
             </div>
           </div>
