@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import moment from "moment";
 import styled from 'styled-components';
 import colors from '../config/colors';
 
@@ -15,11 +14,9 @@ const CountdownWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${'' /* flex-wrap: wrap; */}
-  ${'' /* flex-direction: column; */}
 
   & .countdown-item {
-    color: #fff;
+    color: ${colors.white};
     font-size: 40px;
     display: flex;
     align-items: center;
