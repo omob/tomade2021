@@ -83,14 +83,68 @@ const Container = styled.div`
   .section-title {
     color: ${colors.secondary};
   }
-  ${'' /* @media (max-width: 550px) {
-    $ {
+  @media (max-width: 550px) {
+    & {
+      margin-top: 0;
+    }
+
+    & > div {
+      .tagline {
+        color: ${colors.white};
+      }
       .brideName,
       .groomName {
-        font-size: 34px;
+        font-size: 42px;
+        letter-spacing: 2px;
+      }
+
+      .brideName + span {
+        left: 0;
+      }
+      .groomName {
+        margin: 0px;
+        margin-bottom: 0;
+        text-align: left;
+        text-indent: 50px;
+      }
+      .groomName + .mt-4 {
+        margin-top: 20px;
+        left: 0;
+      }
+      .getting-married {
+        display: none;
+      }
+
+      .date {
+        color: ${colors.white};
+        text-align: center;
+        display: block;
       }
     }
-  } */}
+  }
+
+  @media (min-width: 360px) and (max-width: 768px) {
+    .sm-only {
+      display: block !important;
+    }
+    .sm-none {
+      display: none !important;
+    }
+
+    .md-only {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .sm-only {
+      display: none !important;
+    }
+    .md-only {
+      display: block;
+      display: flex;
+    }
+  }
 `
 const SectionOne = styled.div`
   display: flex;
@@ -101,6 +155,12 @@ const SectionOne = styled.div`
     padding: 20px;
     padding-left: 6%;
   }
+
+   @media (max-width: 550px) {
+      & {
+        height: 600px;
+      }
+   }
 `
 
 const SectionTwo = styled.div`
@@ -143,11 +203,23 @@ const SectionTwo = styled.div`
           letter-spacing: 2px;
           width: 90%;
           line-height: 20px;
+          margin: auto;
         }
       }
     }
   }
-
+  @media (max-width: 550px) {
+    & {
+      div.section {
+        .story {
+          display: block !important;
+          div {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 `
 const SectionThree = styled.div`
   ${"" /* align-items: center; */}
@@ -196,6 +268,14 @@ const SectionThree = styled.div`
     top: -15px;
     position: relative;
   }
+
+  @media (max-width: 768px) {
+    .proposalWrapper {
+      .speech-box {
+        visibility: hidden;
+      }
+    }
+  }
 `
 
 const SectionFour = styled.div`
@@ -210,10 +290,14 @@ const SectionFour = styled.div`
   }
 
   .infoWrapper {
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    display: grid;
+    max-width: 1024px;
+    margin: auto;
   }
+
+  div.lg-only {
+    display: none;
+  } 
 
   .infoWrapper div,
   div.rsvp {
@@ -222,7 +306,7 @@ const SectionFour = styled.div`
     padding: 30px 20px;
     width: 300px;
     height: 220px;
-    margin: 2em;
+    margin: 2em auto;
 
     h4 {
       font-size: 16px;
@@ -236,17 +320,60 @@ const SectionFour = styled.div`
       line-height: 1.6em;
       font-weight: 600;
     }
-  }
-  div.rsvp {
-    margin: 2em auto;
-
     a {
       color: inherit;
       text-decoration: none;
     }
     a:hover {
-      opacity: .5
+      opacity: 0.5;
     }
+  }
+
+  ${"" /* div.rsvp {
+    margin: 2em auto;
+  } */}
+
+  @media (max-width: 768px) {
+    .infoWrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .infoWrapper div,
+      margin: 2em auto;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .infoWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .infoWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    div.lg-only {
+      display: block;
+    }
+
+    .infoWrapper div.rsvp {
+      display: none;
+    }
+
+  }
+
+  ${
+    "" /* @media (min-width: 769px) {
+    .infoWrapper {
+      display: grid;
+      grid-column
+    }
+  } */
   }
 `
 const IndexPage = ({data}) => {
@@ -300,10 +427,14 @@ const IndexPage = ({data}) => {
                   }}
                 />
                 {areMarried && "ARE MARRIED!!! "}
-                {!areMarried && "ARE GETTING MARRIED" }
+                {!areMarried && "ARE GETTING MARRIED"}
               </h2>
               <span className="date">27th March 2021</span>
-              <Countdown timeTillDate="Mar 27, 2021 7:00:00" onComplete={handleOnComplete} />
+              <Countdown
+                className="md"
+                timeTillDate="Mar 27, 2021 7:00:00"
+                onComplete={handleOnComplete}
+              />
             </div>
           </div>
           <div>
@@ -339,7 +470,7 @@ const IndexPage = ({data}) => {
               </div>
             </div>
             <div className="story">
-              <div className="writeup">
+              <div className="writeup md-only sm-none">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                   a arcu eu massa luctus imperdiet sed a nisl. In eu laoreet
@@ -356,12 +487,30 @@ const IndexPage = ({data}) => {
                 <img src={require("../images/tomi.png")} alt="Tomi" />
                 <span className="name">Tomisin</span>
               </div>
+              <div className="writeup sm-only md-none">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  a arcu eu massa luctus imperdiet sed a nisl. In eu laoreet
+                  dolor. Quisque arcu lacus, auctor sed sem sed, rutrum iaculis
+                  ante. Donec vitae lorem non nibh congue accumsan. Integer sit
+                  amet ipsum lorem. Vestibulum vehicula lacus scelerisque eros
+                  rhoncus, id porttitor sem vestibulum. Nam tincidunt, arcu eget
+                  pellentesque faucibus, augue lectus venenatis ante, non
+                  sodales ex arcu vitae nibh. Pellentesque habitant morbi
+                  tristique senectus
+                </p>
+              </div>
             </div>
           </div>
         </SectionTwo>
 
         <SectionThree className="mt-4">
-          <img src={require("../images/sec3.png")} alt={""} height="auto" style={{}} />
+          <img
+            src={require("../images/sec3.png")}
+            alt={""}
+            height="auto"
+            style={{}}
+          />
           <h3 className="section-title">THE PROPOSAL</h3>
           <div className="proposalWrapper">
             <Video
@@ -424,8 +573,20 @@ const IndexPage = ({data}) => {
                 Time: 2pm
               </p>
             </div>
+            <div className="rsvp">
+              <h4>RSVP</h4>
+              <p>
+                <a href="tel:08033019048">Akinbode Oloidi Jnr: 08033019048 </a>
+                <br />
+                <a href="tel:08104198032">Oluwaseyi Oloidi: 08104198032 </a>
+                <br />
+                <a href="tel:08033151464">Bright Musa: 08033151464</a>
+                <br />
+                <a href="tel:08108675212"> Ella Chioma: 08108675212</a>
+              </p>
+            </div>
           </div>
-          <div className="rsvp">
+          <div className="rsvp lg-only">
             <h4>RSVP</h4>
             <p>
               <a href="tel:08033019048">Akinbode Oloidi Jnr: 08033019048 </a>

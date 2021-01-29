@@ -12,13 +12,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "@fontsource/galada"
 import "fontsource-open-sans/";
-// import "@fontsource/molle"
+import "@fontsource/molle"
 
 import "./layout.css"
 import colors from "../config/colors"
 import styled from "styled-components"
-
-
 
 const Footer = styled.footer`
 margin-top: 2rem;

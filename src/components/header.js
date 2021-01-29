@@ -52,6 +52,7 @@ const NavBar = styled.nav`
     li.gift:hover {
       opacity: .6;
     }
+  }
 `
 
 const Header = ({ siteTitle }) => {
@@ -60,13 +61,13 @@ const Header = ({ siteTitle }) => {
       <NavBar>
         <ul>
           <li>
-            <Link to={""}>The Story</Link>
+            <Link to={"/"}>The Story</Link>
           </li>
           <li>
-            <Link to={""}>Proposal</Link>
+            <Link to={"/"}>Proposal</Link>
           </li>
           <li>
-            <Link to={""}>Gallery</Link>
+            <Link to={"/"}>Gallery</Link>
           </li>
           <li className="gift">
             <Link to={"/gift"}>Gift US</Link>
