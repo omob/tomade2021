@@ -295,10 +295,6 @@ const SectionFour = styled.div`
     margin: auto;
   }
 
-  div.lg-only {
-    display: none;
-  } 
-
   .infoWrapper div,
   div.rsvp {
     background-color: ${colors.white};
@@ -329,10 +325,6 @@ const SectionFour = styled.div`
     }
   }
 
-  ${"" /* div.rsvp {
-    margin: 2em auto;
-  } */}
-
   @media (max-width: 768px) {
     .infoWrapper {
       display: grid;
@@ -357,14 +349,9 @@ const SectionFour = styled.div`
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    div.lg-only {
-      display: block;
-    }
-
     .infoWrapper div.rsvp {
-      display: none;
+      grid-column-start: 2
     }
-
   }
 
   ${
@@ -585,18 +572,6 @@ const IndexPage = ({data}) => {
                 <a href="tel:08108675212"> Ella Chioma: 08108675212</a>
               </p>
             </div>
-          </div>
-          <div className="rsvp lg-only">
-            <h4>RSVP</h4>
-            <p>
-              <a href="tel:08033019048">Akinbode Oloidi Jnr: 08033019048 </a>
-              <br />
-              <a href="tel:08104198032">Oluwaseyi Oloidi: 08104198032 </a>
-              <br />
-              <a href="tel:08033151464">Bright Musa: 08033151464</a>
-              <br />
-              <a href="tel:08108675212"> Ella Chioma: 08108675212</a>
-            </p>
           </div>
         </SectionFour>
       </Container>
