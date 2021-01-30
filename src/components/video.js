@@ -15,7 +15,7 @@ const VideoWrapper = styled.video`
 `;
 
 const Video = ({ videoSrcURL, videoTitle, iframStyle, ...props }) => (
-  <VideoWrapper autoPlay={true} loop controls>
+  <VideoWrapper autoPlay loop controls playsInline>
     <source src={videoSrcURL} type="video/mp4" />
   </VideoWrapper>
 )

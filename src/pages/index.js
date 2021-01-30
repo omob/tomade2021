@@ -96,10 +96,12 @@ const Container = styled.div`
       .groomName {
         font-size: 42px;
         letter-spacing: 2px;
+        position: relative;
       }
 
       .brideName + span {
         left: 0;
+        width: 100px;
       }
       .groomName {
         margin: 0px;
@@ -134,6 +136,10 @@ const Container = styled.div`
     .md-only {
       display: none !important;
     }
+
+    .section-title {
+      font-size: 26px;
+    }
   }
 
   @media (min-width: 768px) {
@@ -158,7 +164,7 @@ const SectionOne = styled.div`
 
    @media (max-width: 550px) {
       & {
-        height: 600px;
+        height: 550px;
       }
    }
 `
@@ -179,11 +185,14 @@ const SectionTwo = styled.div`
 
     .story {
       display: flex;
-      margin-bottom: 30px;
-
+      margin-bottom: 5em;
+      
+      img {
+        width: 60%;
+        max-width: 300px;
+      }
       div {
         width: 50%;
-        height: 400px;
       }
       span.name {
         display: block;
@@ -208,13 +217,21 @@ const SectionTwo = styled.div`
       }
     }
   }
-  @media (max-width: 550px) {
+  @media (max-width: 768px) {
     & {
       div.section {
         .story {
           display: block !important;
           div {
             width: 100%;
+          }
+          
+          .writeup {
+            display: block;
+
+            p {
+              margin-top: 2em;
+            }
           }
         }
       }
@@ -228,6 +245,14 @@ const SectionThree = styled.div`
     background-color: ${colors.black};
     position: relative;
 
+    .proposal-sm-only{
+       width: 90%;
+       margin: auto;
+       padding: 2em 1em;
+       font-weight: 100;
+       color: ${colors.light}
+    } 
+    
     .speech-box {
       max-width: 419px;
       background-color: ${colors.white};
@@ -235,8 +260,9 @@ const SectionThree = styled.div`
       position: absolute;
       top: 30%;
       left: 10px;
-      transition: .3s;
+      transition: 0.3s;
       cursor: pointer;
+      display: none;
 
       h3 {
         font-size: 16px;
@@ -247,7 +273,7 @@ const SectionThree = styled.div`
       }
 
       p {
-        color: ${colors.primary};
+        color: ${colors.dark};
         font-family: "Open Sans";
         font-size: 14px;
         font-weight: 600;
@@ -258,7 +284,7 @@ const SectionThree = styled.div`
     }
 
     .speech-box:hover {
-      opacity: .2;
+      opacity: 0.2;
     }
   }
 
@@ -269,10 +295,10 @@ const SectionThree = styled.div`
     position: relative;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .proposalWrapper {
       .speech-box {
-        visibility: hidden;
+        display: block;
       }
     }
   }
@@ -308,6 +334,7 @@ const SectionFour = styled.div`
       font-size: 16px;
       font-family: "Molle";
       font-weight: 100;
+      color: ${colors.primary}
     }
 
     p {
@@ -395,7 +422,22 @@ const IndexPage = ({data}) => {
         <SectionOne>
           <div>
             <span className="tagline">#tomade2021</span>
-            <h2 className="brideName">OLUWATOMISIN</h2>
+            <h2 className="brideName">
+              OLUWATOMISIN
+              <img
+                src={require("../images/rose.png")}
+                width={41}
+                height={46}
+                className="sm-only"
+                alt=""
+                style={{
+                  position: "absolute",
+                  right: -5,
+                  top: -55,
+                  transform: "rotate(45deg)",
+                }}
+              />
+            </h2>
             <span>and</span>
             <h2 className="groomName">SAMSON</h2>
 
@@ -417,11 +459,12 @@ const IndexPage = ({data}) => {
                 {!areMarried && "ARE GETTING MARRIED"}
               </h2>
               <span className="date">27th March 2021</span>
-              <Countdown
-                className="md"
-                timeTillDate="Mar 27, 2021 7:00:00"
-                onComplete={handleOnComplete}
-              />
+              <div className="md-only">
+                <Countdown
+                  timeTillDate="Mar 27, 2021 7:00:00"
+                  onComplete={handleOnComplete}
+                />
+              </div>
             </div>
           </div>
           <div>
@@ -500,6 +543,20 @@ const IndexPage = ({data}) => {
           />
           <h3 className="section-title">THE PROPOSAL</h3>
           <div className="proposalWrapper">
+            <div className="proposal-sm-only sm-only">
+              <p> Oluwatomisin!!!! (God is enough for me) </p>
+              <p>
+                You’ve been there through the “Not so good times”. You’ve
+                trusted my judgments and seen me through it even when it looked
+                like the path wasn’t clear. You’ve indeed been patient!!!
+                Patient with quite a number of things. Our path hasn’t been so
+                smooth but it’s been interesting. Quite a number of things, I’ve
+                learnt from your quiet rebuke (part of which is being
+                SENsITIVE). Thank you for bringing me PEACE! I DO NOT take our
+                love for granted and that’s why I’ve chosen this day to ask you
+                my Choco candy! Will you marry me??????
+              </p>
+            </div>
             <Video
               videoSrcURL={require("../assets/video/sam proposal.mp4")}
               videoTitle="Samson's Proposal"
