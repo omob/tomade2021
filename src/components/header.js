@@ -60,17 +60,18 @@ const Header = ({ siteTitle }) => {
     <HeaderWrapper>
       <NavBar>
         <ul>
-          <li>
+          {/* <li>
             <Link to={"/"}>The Story</Link>
           </li>
+           */}
           <li>
-            <Link to={"/"}>Proposal</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
             <Link to={"/"}>Gallery</Link>
           </li>
           <li className="gift">
-            <Link to={"/gift"}>Gift US</Link>
+            <Link to={"/gifts"}>Gift US</Link>
           </li>
         </ul>
       </NavBar>

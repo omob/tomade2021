@@ -164,7 +164,7 @@ const SectionOne = styled.div`
 
    @media (max-width: 550px) {
       & {
-        height: 550px;
+        height: 100vh;
       }
    }
 `
@@ -417,7 +417,6 @@ const IndexPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Home" />
-
       <Container>
         <SectionOne>
           <div>
