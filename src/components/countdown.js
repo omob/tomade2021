@@ -15,7 +15,7 @@ const CountdownWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  & .countdown-item {
+  .countdown-item {
     color: ${colors.white};
     font-size: 40px;
     display: flex;
