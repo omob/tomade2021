@@ -14,8 +14,8 @@ const CountdownWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  .countdown-item {
+`
+const CountdownItem = styled.div`
     color: ${colors.white};
     font-size: 40px;
     display: flex;
@@ -29,13 +29,12 @@ const CountdownWrapper = styled.div`
     width: 100px;
     height: 100px;
 
-    span {
-        color: ${colors.secondary};
-        font-size: 10px;
-        text-transform: uppercase;
+    & > span {
+      color: ${colors.secondary};
+      font-size: 10px;
+      text-transform: uppercase;
     }
-  }
-`
+`;
 
 function Countdown({ timeTillDate, onComplete }) {
   const [days, setDays] = useState()
@@ -84,32 +83,32 @@ function Countdown({ timeTillDate, onComplete }) {
     <Container>
       <CountdownWrapper>
         {days && (
-          <div className="countdown-item">
+          <CountdownItem>
             <SVGCircle radius={daysRadius} />
             {days}
             <span>days</span>
-          </div>
+          </CountdownItem>
         )}
         {hours && (
-          <div className="countdown-item">
+          <CountdownItem>
             <SVGCircle radius={hoursRadius} />
             {hours}
             <span>hours</span>
-          </div>
+          </CountdownItem>
         )}
         {minutes && (
-          <div className="countdown-item">
+          <CountdownItem>
             <SVGCircle radius={minutesRadius} />
             {minutes}
             <span>minutes</span>
-          </div>
+          </CountdownItem>
         )}
         {seconds && (
-          <div className="countdown-item">
+          <CountdownItem>
             <SVGCircle radius={secondsRadius} />
             {seconds}
             <span>seconds</span>
-          </div>
+          </CountdownItem>
         )}
       </CountdownWrapper>
     </Container>

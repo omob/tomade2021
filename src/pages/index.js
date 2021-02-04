@@ -459,10 +459,10 @@ const IndexPage = ({data}) => {
               </h2>
               <span className="date">27th March 2021</span>
               <div className="md-only">
-                <Countdown
+                {/* <Countdown
                   timeTillDate="Mar 27, 2021 7:00:00"
                   onComplete={handleOnComplete}
-                />
+                /> */}
               </div>
             </div>
           </div>
