@@ -20,6 +20,53 @@ const HeaderSection = styled.div`
     font-weight: 100;
   }
 
+  h2 + p {
+    font-size: 16px;
+    max-width: 800px;
+  }
+
+  .transfer {
+    max-width: 928px;
+    margin: auto;
+    background-color: #232323;
+    margin-top: 3em;
+    padding: 30px;
+    font-family: "Galada";
+    font-weight: 100;
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-family: inherit;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 14px;
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .transfer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      > :first-child {
+        border-right: 1px solid #ededed;
+      }
+
+      p {
+        display: flex;
+        img {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
   @media (min-width: 992px) {
     p {
       width: 80%;
@@ -28,8 +75,8 @@ const HeaderSection = styled.div`
   }
 `
 const GiftSection = styled.div`
-  padding: 5%;
-  max-width: 1200px;
+  padding: 0 5% 5% 5%;
+  max-width: 1400px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -53,7 +100,6 @@ const GiftSection = styled.div`
 
   .gift {
     width: 250px;
-    font-weight: 100 !important;
     position: relative;
     margin: 10px;
 
@@ -99,7 +145,21 @@ const GiftSection = styled.div`
     }
   }
 `
+const DeliveryInfo = styled.div`
+  max-width: 750px;
+  margin: auto;
+  margin-top: 1em;
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 30px;
 
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+  }
+`
 
 const SecondPage = () => (
   <Layout>
@@ -108,16 +168,36 @@ const SecondPage = () => (
       <HeaderSection>
         <h2>Gift Us </h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a arcu
-          eu massa luctus imperdiet sed a nisl. In eu laoreet dolor. Quisque
-          arcu lacus, auctor sed sem sed, rutrum iaculis ante. Donec vitae lorem
-          non nibh congue accumsan. Integer sit amet ipsum lorem. Vestibulum
-          vehicula lacus scelerisque eros rhoncus, id porttitor sem vestibulum.
-          Nam tincidunt, arcu eget pellentesque faucibus, augue lectus venenatis
-          ante, non sodales ex arcu vitae nibh. Pellentesque habitant morbi
-          tristique senectus
+          We will truly appreciate that our friends, family and wedding guests
+          send us mostly the gifts on this registry. There is also an option to
+          just send us cash. We are both so grateful for your support
         </p>
+
+        <div className="transfer">
+          <div>
+            <h3>For Bank Transfer</h3>
+            <p>
+              <img src={require("../images/gtlogo.png")} alt="gtbLogo" />
+              Account Name - Account Number
+            </p>
+          </div>
+          <div>
+            <h3>For Online Transfer</h3>
+          </div>
+        </div>
       </HeaderSection>
+
+      <DeliveryInfo>
+        <img src={require("../images/jumialogo.png")} alt="jumia-logo" />
+        <p>
+          Delivery Details (please use our details to prevent a double order)
+          <br />
+          33D Kayode Adeyeri Crescent, Ogudu GRA, Ojota, Lagos.
+          <br /> 
+          +2348088018711
+        </p>
+      </DeliveryInfo>
+
       <GiftSection>
         <div className="gift">
           <div className="img-div">

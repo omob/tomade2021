@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "@fontsource/galada"
+import "@fontsource/galada/400.css"
 import "fontsource-open-sans/";
 import "@fontsource/molle"
 
