@@ -128,7 +128,7 @@ const SVGCircle = ({ radius }) => (
   <SVGWrapper>
     <path
       fill="none"
-      stroke="#333"
+      stroke="#fff"
       strokeWidth="4"
       d={describeArc(50, 50, 48, 0, radius)}
     />
