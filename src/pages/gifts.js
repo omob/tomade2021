@@ -23,6 +23,7 @@ const HeaderSection = styled.div`
   h2 + p {
     font-size: 16px;
     max-width: 800px;
+    margin: auto;
   }
 
   .transfer {
@@ -50,6 +51,10 @@ const HeaderSection = styled.div`
   }
 
   @media (min-width: 768px) {
+    h2 + p {
+      font-size: 18px;
+    }
+
     .transfer {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -64,13 +69,6 @@ const HeaderSection = styled.div`
           margin-right: 20px;
         }
       }
-    }
-  }
-
-  @media (min-width: 992px) {
-    p {
-      width: 80%;
-      margin: auto;
     }
   }
 `
