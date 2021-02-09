@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
@@ -8,7 +8,11 @@ import colors from "../config/colors"
 
 const Container = styled.div`
   padding: 20px;
-`;
+
+  p {
+    font-family: "Open Sans";
+  }
+`
 
 const HeaderSection = styled.div`
   text-align: center;
@@ -42,10 +46,15 @@ const HeaderSection = styled.div`
       letter-spacing: 2px;
     }
 
-    p {
-      font-size: 14px;
+    div.account-info {
+      font-size: 16px;
       img {
         margin-right: 10px;
+      }
+
+      div {
+        font-family: "Open Sans";
+        font-size: 16px;
       }
     }
   }
@@ -63,7 +72,7 @@ const HeaderSection = styled.div`
         border-right: 1px solid #ededed;
       }
 
-      p {
+      div.account-info {
         display: flex;
         img {
           margin-right: 20px;
@@ -104,7 +113,13 @@ const GiftSection = styled.div`
     .img-div {
       background-color: white;
       height: 150px;
+
       margin-bottom: 10px;
+      overflow: hidden;
+
+      .gatsby-image-wrapper {
+        height: 90%;
+      }
     }
 
     .content {
@@ -113,13 +128,17 @@ const GiftSection = styled.div`
       & > div {
         flex: 1;
 
-        h3 {
+        h6 {
           margin-bottom: 2px;
+          font-weight: 500;
         }
 
-        h3,
+        h6,
         span {
           font-size: 14px;
+        }
+        span {
+          letter-spacing: 1px;
         }
       }
 
@@ -159,131 +178,93 @@ const DeliveryInfo = styled.div`
   }
 `
 
-const SecondPage = () => (
-  <Layout>
-    <SEO title="Gifts" />
-    <Container>
-      <HeaderSection>
-        <h2>Gift Us </h2>
-        <p>
-          We will truly appreciate that our friends, family and wedding guests
-          send us mostly the gifts on this registry. There is also an option to
-          just send us cash. We are both so grateful for your support
-        </p>
+const GiftsPage = ({ data: { gifts: { nodes: gifts } }  }) => {
 
-        <div className="transfer">
-          <div>
-            <h3>For Bank Transfer</h3>
-            <p>
-              <img src={require("../images/gtlogo.png")} alt="gtbLogo" />
-              Account Name - Account Number
-            </p>
-          </div>
-          <div>
-            <h3>For Online Transfer</h3>
-          </div>
-        </div>
-      </HeaderSection>
+  const Gift = ({ item: { title, price, image: {fixed: image }, url, isOrdered }}) => {
+   return (
+     <div className="gift">
+       <div className="img-div">
+         <Img fluid={image} alt={title} />
+       </div>
+       <div className="content">
+         <div>
+           <h6>{title}</h6>
+           <span>₦ {price}</span>
+         </div>
+         <a href={url} target="_blank" alt={title} className="gift-btn">
+           Gift
+         </a>
+       </div>
+     </div>
+   )
+  }
+  return (
+    <Layout>
+      <SEO title="Gifts" />
+      <Container>
+        <HeaderSection>
+          <h2>Gift Us </h2>
+          <p>
+            We will truly appreciate that our friends, family and wedding guests
+            send us mostly the gifts on this registry. There is also an option
+            to just send us cash. We are both so grateful for your support
+          </p>
 
-      <DeliveryInfo>
-        <img src={require("../images/jumialogo.png")} alt="jumia-logo" />
-        <p>
-          Delivery Details (please use our details to prevent a double order)
-          <br />
-          33D Kayode Adeyeri Crescent, Ogudu GRA, Ojota, Lagos.
-          <br /> 
-          +2348088018711
-        </p>
-      </DeliveryInfo>
+          <div className="transfer">
+            <div>
+              <h3>For Bank Transfer</h3>
+              <div className="account-info">
+                <img src={require("../images/gtlogo.png")} alt="gtbLogo" />
+                <div>
+                  <>
+                    <b>Account Name </b>- Oke Oluwatosin Roseline <br />
+                    <b>Account Number </b> - 0049784272
+                  </>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3>For Online Transfer</h3>
+            </div>
+          </div>
+        </HeaderSection>
 
-      <GiftSection>
-        <div className="gift">
-          <div className="img-div">
-            <img src=" " />
-          </div>
-          <div className="content">
-            <div>
-              <h3>Air Conditional</h3>
-              <span>N78,000</span>
-            </div>
-            <a className="gift-btn" href="/">
-              Gift
-            </a>
-          </div>
-        </div>
-        <div className="gift">
-          <div className="img-div">
-            <img src=" " />
-          </div>
-          <div className="content">
-            <div>
-              <h3>Air Conditional</h3>
-              <span>N78,000</span>
-            </div>
-            <a className="gift-btn" href="/">
-              Gift
-            </a>
-          </div>
-        </div>
-        <div className="gift">
-          <div className="img-div">
-            <img src=" " />
-          </div>
-          <div className="content">
-            <div>
-              <h3>Air Conditional</h3>
-              <span>N78,000</span>
-            </div>
-            <a className="gift-btn" href="/">
-              Gift
-            </a>
-          </div>
-        </div>
-        <div className="gift">
-          <div className="img-div">
-            <img src=" " />
-          </div>
-          <div className="content">
-            <div>
-              <h3>Air Conditional</h3>
-              <span>N78,000</span>
-            </div>
-            <a className="gift-btn" href="/">
-              Gift
-            </a>
-          </div>
-        </div>
-        <div className="gift">
-          <div className="img-div">
-            <img src=" " />
-          </div>
-          <div className="content">
-            <div>
-              <h3>Air Conditional</h3>
-              <span>N78,000</span>
-            </div>
-            <a className="gift-btn" href="/">
-              Gift
-            </a>
-          </div>
-        </div>
-        <div className="gift">
-          <div className="img-div">
-            <img src=" " />
-          </div>
-          <div className="content">
-            <div>
-              <h3>Air Conditional</h3>
-              <span>N78,000</span>
-            </div>
-            <a className="gift-btn" href="/">
-              Gift
-            </a>
-          </div>
-        </div>
-      </GiftSection>
-    </Container>
-  </Layout>
-)
+        <DeliveryInfo>
+          <img src={require("../images/jumialogo.png")} alt="jumia-logo" />
+          <p>
+            Delivery Details (please use our details to prevent a double order)
+            <br />
+            3, Reverend Adegoke Street, Canal Estate, Okota, Lagos.
+            <br />
+            +234 0812 044 6099
+          </p>
+        </DeliveryInfo>
 
-export default SecondPage
+        <GiftSection>
+          {gifts.map(gift => (
+            <Gift item={gift} />
+          ))}
+        </GiftSection>
+      </Container>
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  {
+    gifts: allContentfulGift {
+      nodes {
+        title
+        url
+        isOrdered
+        image {
+          fixed(height: 200) {
+            ...GatsbyContentfulFixed
+          }
+        }
+        price
+      }
+    }
+  }
+`
+export default GiftsPage
