@@ -69,7 +69,7 @@ function Countdown({ timeTillDate, onComplete }) {
     }
   }, [timeTillDate])
 
-  const daysRadius = mapNumber(days, 30, 0, 0, 360)
+  const daysRadius = mapNumber(days, 28, 0, 0, 360)
   const hoursRadius = mapNumber(hours, 24, 0, 0, 360)
   const minutesRadius = mapNumber(minutes, 60, 0, 0, 360)
   const secondsRadius = mapNumber(seconds, 60, 0, 0, 360)
@@ -82,34 +82,26 @@ function Countdown({ timeTillDate, onComplete }) {
   return (
     <Container>
       <CountdownWrapper>
-        {days && (
-          <CountdownItem>
-            <SVGCircle radius={daysRadius} />
-            {days}
-            <span>days</span>
-          </CountdownItem>
-        )}
-        {hours && (
-          <CountdownItem>
-            <SVGCircle radius={hoursRadius} />
-            {hours}
-            <span>hours</span>
-          </CountdownItem>
-        )}
-        {minutes && (
-          <CountdownItem>
-            <SVGCircle radius={minutesRadius} />
-            {minutes}
-            <span>minutes</span>
-          </CountdownItem>
-        )}
-        {seconds && (
-          <CountdownItem>
-            <SVGCircle radius={secondsRadius} />
-            {seconds}
-            <span>seconds</span>
-          </CountdownItem>
-        )}
+        <CountdownItem>
+          <SVGCircle radius={daysRadius} />
+          {days || "-"}
+          <span>days</span>
+        </CountdownItem>
+        <CountdownItem>
+          <SVGCircle radius={hoursRadius} />
+          {hours || "-"}
+          <span>hours</span>
+        </CountdownItem>
+        <CountdownItem>
+          <SVGCircle radius={minutesRadius} />
+          {minutes || "-"}
+          <span>minutes</span>
+        </CountdownItem>
+        <CountdownItem>
+          <SVGCircle radius={secondsRadius} />
+          {seconds || "-"}
+          <span>seconds</span>
+        </CountdownItem>
       </CountdownWrapper>
     </Container>
   )
