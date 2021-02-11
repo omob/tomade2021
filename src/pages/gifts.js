@@ -39,6 +39,12 @@ const HeaderSection = styled.div`
     font-family: "Galada";
     font-weight: 100;
 
+    .flutterwave:hover{
+      opacity: .6;
+      transition: .3s;
+    } 
+
+
     h3 {
       text-transform: uppercase;
       font-size: 18px;
@@ -47,6 +53,7 @@ const HeaderSection = styled.div`
     }
 
     div.account-info {
+      margin-bottom: 2em;
       font-size: 16px;
       img {
         margin-right: 10px;
@@ -149,11 +156,16 @@ const GiftSection = styled.div`
         background-color: ${colors.primary};
         color: ${colors.white};
         font-size: 12px;
+        border: none;
         border-radius: 20px;
         letter-spacing: 2px;
         text-decoration: none;
         transition: 0.5s;
         height: 25px;
+      }
+
+      .gift-btn.ordered {
+        background-color: ${colors.dark};
       }
 
       .gift-btn:hover {
@@ -191,9 +203,15 @@ const GiftsPage = ({ data: { gifts: { nodes: gifts } }  }) => {
            <h6>{title}</h6>
            <span>₦ {price}</span>
          </div>
-         <a href={url} target="_blank" alt={title} className="gift-btn">
-           Gift
-         </a>
+         {isOrdered ? (
+           <button className="gift-btn ordered">
+             Ordered
+           </button>
+         ) : (
+           <a href={url} target="_blank" alt={title} className="gift-btn">
+             Gift
+           </a>
+         )}
        </div>
      </div>
    )
@@ -225,6 +243,9 @@ const GiftsPage = ({ data: { gifts: { nodes: gifts } }  }) => {
             </div>
             <div>
               <h3>For Online Transfer</h3>
+              <a href="https://flutterwave.com/pay/tomade2021ljeo" target="_blank" className="flutterwave">
+                  <img src={require("../images/flutterwavelogo.png")} alt="flutterwave logo" width="200" />
+              </a>
             </div>
           </div>
         </HeaderSection>
