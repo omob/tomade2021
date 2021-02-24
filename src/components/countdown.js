@@ -69,7 +69,7 @@ function Countdown({ timeTillDate, onComplete }) {
     }
   }, [timeTillDate])
 
-  const daysRadius = mapNumber(days, 28, 0, 0, 360)
+  const daysRadius = mapNumber(days, 85, 0, 0, 360)
   const hoursRadius = mapNumber(hours, 24, 0, 0, 360)
   const minutesRadius = mapNumber(minutes, 60, 0, 0, 360)
   const secondsRadius = mapNumber(seconds, 60, 0, 0, 360)

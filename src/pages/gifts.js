@@ -192,29 +192,35 @@ const DeliveryInfo = styled.div`
 
 const GiftsPage = ({ data: { gifts: { nodes: gifts } }  }) => {
 
-  const Gift = ({ item: { title, price, image: {fixed: image }, url, isOrdered }}) => {
-   return (
-     <div className="gift">
-       <div className="img-div">
-         <Img fluid={image} alt={title} />
-       </div>
-       <div className="content">
-         <div>
-           <h6>{title}</h6>
-           <span>₦ {price}</span>
-         </div>
-         {isOrdered ? (
-           <button className="gift-btn ordered">
-             Ordered
-           </button>
-         ) : (
-           <a href={url} target="_blank" alt={title} className="gift-btn">
-             Gift
-           </a>
-         )}
-       </div>
-     </div>
-   )
+  const Gift = ({
+    item: {
+      title,
+      price,
+      image: { fixed: image },
+      url,
+      isOrdered,
+    },
+  }) => {
+    return (
+      <div className="gift">
+        <div className="img-div">
+          <Img fixed={image} alt={title} />
+        </div>
+        <div className="content">
+          <div>
+            <h6>{title}</h6>
+            <span>₦ {price}</span>
+          </div>
+          {isOrdered ? (
+            <button className="gift-btn ordered">Ordered</button>
+          ) : (
+            <a href={url} target="_blank" alt={title} className="gift-btn">
+              Gift
+            </a>
+          )}
+        </div>
+      </div>
+    )
   }
   return (
     <Layout>
@@ -262,8 +268,8 @@ const GiftsPage = ({ data: { gifts: { nodes: gifts } }  }) => {
         </DeliveryInfo>
 
         <GiftSection>
-          {gifts.map(gift => (
-            <Gift item={gift} />
+          {gifts.map((gift, index) => (
+            <Gift key={index} item={gift} />
           ))}
         </GiftSection>
       </Container>
