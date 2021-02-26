@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "@fontsource/galada/400.css"
 import "fontsource-open-sans/";
-import "@fontsource/molle"
+import "@fontsource/molle/index.css"
 
 import "./layout.css"
 import colors from "../config/colors"
