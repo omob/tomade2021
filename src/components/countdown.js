@@ -30,7 +30,7 @@ const CountdownItem = styled.div`
     height: 100px;
 
     & > span {
-      color: ${colors.secondary};
+      ${'' /* color: ${colors.secondary}; */}
       font-size: 10px;
       text-transform: uppercase;
     }

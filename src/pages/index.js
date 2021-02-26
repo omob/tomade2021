@@ -5,6 +5,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video"
 import colors from "../config/colors"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
+import BackgroundImage from "gatsby-background-image"
 
 const Container = styled.div`
   .position-relative {
@@ -20,6 +23,10 @@ const Container = styled.div`
 
   & > div {
     text-align: center;
+  }
+
+  & > section.headerWrapper {
+    text-align: center;
 
     .tagline {
       color: ${colors.light};
@@ -31,7 +38,7 @@ const Container = styled.div`
     .brideName,
     .groomName {
       font-weight: 400;
-      color: ${colors.secondary};
+      ${"" /* color: ${colors.secondary}; */}
       font-size: 64px;
     }
 
@@ -49,6 +56,7 @@ const Container = styled.div`
       margin: 10px;
       display: block;
       font-weight: 100;
+      color: ${colors.secondary};
     }
 
     .groomName {
@@ -77,9 +85,17 @@ const Container = styled.div`
       font-weight: 100;
       letter-spacing: 1px;
       color: ${colors.primary};
+      color: ${colors.secondary};
     }
   }
 
+  @media screen and (max-width: 600px) {
+
+    .headerWrapper:before,
+    .headerWrapper:after {
+      background-position: 70% 20% !important;
+    }
+  }
   .section-title {
     color: ${colors.secondary};
   }
@@ -88,7 +104,7 @@ const Container = styled.div`
       margin-top: 0;
     }
 
-    & > div {
+    & > section.headerWrapper {
       .tagline {
         color: ${colors.white};
       }
@@ -156,12 +172,16 @@ const SectionOne = styled.div`
   display: flex;
   align-items: center;
   height: 800px;
+  overflow: hidden;
 
   & > div:first-child {
     padding: 20px;
     padding-left: 6%;
   }
 
+& > div:last-child {
+  width: 100%;
+}
    @media (max-width: 550px) {
       & {
         height: 100vh;
@@ -170,6 +190,7 @@ const SectionOne = styled.div`
 `
 
 const SectionTwo = styled.div`
+  padding-top: 3em;
   align-items: center;
   h3 {
     font-size: 36px;
@@ -390,62 +411,45 @@ const SectionFour = styled.div`
   } */
   }
 `
-const IndexPage = ({data}) => {
+const IndexPage = () => {
 
-  // const getImage = (name) => 
-  //     useStaticQuery(graphql`
-  //       {
-  //         allFile(filter: { name: { eq: "name" } }) {
-  //           nodes {
-  //             relativePath
-  //             childImageSharp {
-  //               fluid {
-  //                 src
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     `)
+const bannerImage = useStaticQuery(graphql`
+  {
+    file(relativePath: { eq: "bgImage.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`)
 
-  // console.log(getImage("sam"))
+console.log(bannerImage)
   const [areMarried, setAreMarried] = useState(false);
   const handleOnComplete = () => {
     setAreMarried(true);
   }
-
   return (
     <Layout>
       <SEO title="Home" />
       <Container>
-        <SectionOne>
-          <div>
-            <span className="tagline">#tomade2021</span>
-            <h2 className="brideName">
-              OLUWATOMISIN
-              <img
-                src={require("../images/rose.png")}
-                width={41}
-                height={46}
-                className="sm-only"
-                alt=""
-                style={{
-                  position: "absolute",
-                  right: -5,
-                  top: -55,
-                  transform: "rotate(45deg)",
-                }}
-              />
-            </h2>
-            <span>and</span>
-            <h2 className="groomName">SAMSON</h2>
-
-            <div className="mt-4 l-2">
-              <h2 className="getting-married position-relative">
+        <BackgroundImage
+          Tag="section"
+          fluid={bannerImage.file.childImageSharp.fluid}
+          className="headerWrapper"
+          
+        >
+          <SectionOne>
+            <div>
+              <span className="tagline">#tomade2021</span>
+              <h2 className="brideName">
+                OLUWATOMISIN
                 <img
                   src={require("../images/rose.png")}
                   width={41}
                   height={46}
+                  className="sm-only"
                   alt=""
                   style={{
                     position: "absolute",
@@ -454,22 +458,44 @@ const IndexPage = ({data}) => {
                     transform: "rotate(45deg)",
                   }}
                 />
-                {areMarried && "ARE MARRIED!!! "}
-                {!areMarried && "ARE GETTING MARRIED"}
               </h2>
-              <span className="date">27th March 2021</span>
-              <div className="md-only">
-                <Countdown
-                  timeTillDate="Mar 27, 2021 7:00:00"
-                  onComplete={handleOnComplete}
-                />
+              <span>and</span>
+              <h2 className="groomName">SAMSON</h2>
+
+              <div className="mt-4 l-2">
+                <h2 className="getting-married position-relative">
+                  <img
+                    src={require("../images/rose.png")}
+                    width={41}
+                    height={46}
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: -5,
+                      top: -55,
+                      transform: "rotate(45deg)",
+                    }}
+                  />
+                  {areMarried && "ARE MARRIED!!! "}
+                  {!areMarried && "ARE GETTING MARRIED"}
+                </h2>
+                <span className="date">27th March 2021</span>
+                <div className="md-only">
+                  <Countdown
+                    timeTillDate="Mar 27, 2021 7:00:00"
+                    onComplete={handleOnComplete}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <p></p>
-          </div>
-        </SectionOne>
+            <div>
+              {/* <Img
+                fluid={bannerImage.file.childImageSharp.fluid}
+                alt="Samson&Tomi"
+              /> */}
+            </div>
+          </SectionOne>
+        </BackgroundImage>
         <SectionTwo>
           <img
             src={require("../images/sec2.png")}
@@ -481,7 +507,7 @@ const IndexPage = ({data}) => {
           <div className="section">
             <div className="story">
               <div>
-                <img src={require("../images/sam.png")} alt="Sam" />
+                <img src={require("../images/samson.png")} alt="Sam" />
                 <span className="name">Samson</span>
               </div>
               <div className="writeup">
@@ -636,4 +662,3 @@ const IndexPage = ({data}) => {
 }
 
 export default IndexPage;
-

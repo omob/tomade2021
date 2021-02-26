@@ -46,11 +46,15 @@ module.exports = {
       resolve: `gatsby-theme-gallery`,
       options: {
         basePath: "/",
-        galleryPath: "src/content/gallery"
+        galleryPath: "src/content/gallery",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+
+  flags: {
+    THE_FLAG: false
+  }
 }
