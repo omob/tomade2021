@@ -581,7 +581,7 @@ const bannerImage = useStaticQuery(graphql`
               </p>
             </div>
             <Video
-              videoSrcURL={require("../assets/video/sam proposal.mp4")}
+              videoSrcURL={require("../assets/video/proposal.mp4")}
               videoTitle="Samson's Proposal"
             />
 

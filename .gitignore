@@ -70,4 +70,4 @@ yarn-error.log
 
 
 #user 
-src/assets/video/*
+# src/assets/video/*
