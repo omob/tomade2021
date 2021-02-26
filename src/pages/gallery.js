@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 
 const Container = styled.div`
   padding: 20px;
+  padding-top: 100px;
 `
 const HeaderSection = styled.div`
   text-align: center;

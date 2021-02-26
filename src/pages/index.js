@@ -415,7 +415,7 @@ const IndexPage = () => {
 
 const bannerImage = useStaticQuery(graphql`
   {
-    file(relativePath: { eq: "bgImage.jpg" }) {
+    file(relativePath: { eq: "bgImage2.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 2000) {
           ...GatsbyImageSharpFluid
@@ -425,7 +425,6 @@ const bannerImage = useStaticQuery(graphql`
   }
 `)
 
-console.log(bannerImage)
   const [areMarried, setAreMarried] = useState(false);
   const handleOnComplete = () => {
     setAreMarried(true);
@@ -438,7 +437,6 @@ console.log(bannerImage)
           Tag="section"
           fluid={bannerImage.file.childImageSharp.fluid}
           className="headerWrapper"
-          
         >
           <SectionOne>
             <div>

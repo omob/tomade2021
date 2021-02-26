@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { useState } from "react";
+import { useEffect } from "react";
  import styled from 'styled-components';
 
 import colors from "../config/colors";
@@ -10,20 +12,31 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: ${colors.dark};
   max-width: 1440px;
   margin: auto;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  transition: .3s;
+ top: 0;
+  &.scroll {
+    background-color: ${colors.dark};
+  }
 `
 
 const NavBar = styled.nav`
   padding: 20px;
-  height: 80px;
+  height: 70px;
   & > ul {
     display: flex;
     margin: 0;
     justify-content: flex-end;
     width: 100%;
     list-style: none;
+    align-items: center;
 
     li {
       margin: 0 20px;
@@ -56,14 +69,27 @@ const NavBar = styled.nav`
 `
 
 const Header = ({ siteTitle }) => {
+
+  const [headerClass, setHeaderClass] = useState(null);
+
+  const onScroll = () => {
+    if (window.scrollY > 70) return setHeaderClass("scroll")
+
+    setHeaderClass(null)
+  }
+
+  useEffect(() => {
+    const scrollListener = window.addEventListener("scroll", onScroll);
+   
+    return () => {
+      window.removeEventListener("scroll", onScroll )
+    }
+  }, [])
+ 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper className={headerClass}>
       <NavBar>
         <ul>
-          {/* <li>
-            <Link to={"/"}>The Story</Link>
-          </li>
-           */}
           <li>
             <Link to={"/"}>Home</Link>
           </li>

@@ -8,7 +8,7 @@ import colors from "../config/colors"
 
 const Container = styled.div`
   padding: 20px;
-
+  padding-top: 100px;
   p {
     font-family: "Open Sans";
   }
