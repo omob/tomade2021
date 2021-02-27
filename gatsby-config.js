@@ -46,7 +46,7 @@ module.exports = {
       resolve: `gatsby-theme-gallery`,
       options: {
         basePath: "/",
-        galleryPath: "src/content/gallery",
+        galleryPath: "content/gallery",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
