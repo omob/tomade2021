@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import colors from "../config/colors"
-import flutterwaveLogo from "../images/flutterwavelogo.png";
+import flutterwaveLogo from "../images/flutterwavelogo.png"
 
 const Container = styled.div`
   padding: 20px;
