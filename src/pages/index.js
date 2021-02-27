@@ -650,7 +650,7 @@ const bannerImage = useStaticQuery(graphql`
                 <br />
                 <a href="tel:08033151464">Bright Musa: 08033151464</a>
                 <br />
-                <a href="tel:08108675212"> Ella Chioma: 08108675212</a>
+                <a href="tel:08120446099"> Ella Chioma: 08120446099</a>
               </p>
             </div>
           </div>
