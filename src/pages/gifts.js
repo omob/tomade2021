@@ -225,7 +225,10 @@ const GiftsPage = ({ data: { gifts: { nodes: gifts } }  }) => {
   }
   return (
     <Layout>
-      <SEO title="Gifts" />
+      <SEO
+        title="Gifts Registry"
+        description="We are both grateful for your support and appreciate your gifts."
+      />
       <Container>
         <HeaderSection>
           <h2>Gift Us </h2>

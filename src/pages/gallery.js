@@ -2,6 +2,7 @@ import React from 'react';
 import { Gallery } from "gatsby-theme-gallery"
 import Layout from "../components/layout"
 import styled from '@emotion/styled';
+import SEO from '../components/seo';
 
 
 const Container = styled.div`
@@ -20,6 +21,9 @@ const HeaderSection = styled.div`
 `
 const MyGallery = () => (
   <Layout>
+    <SEO 
+      title="Gallery" 
+      description="Our Pre-wedding, Introduction and Proposal Pictures"/>
     <Container>
       <HeaderSection>
         <h2>Gallery</h2>
