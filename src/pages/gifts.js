@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import colors from "../config/colors"
-// import flutterwaveLogo from "../images/flutterwavelogo.png";
+import flutterwaveLogo from "../images/flutterwavelogo.png";
 
 const Container = styled.div`
   padding: 20px;
@@ -255,7 +255,7 @@ const GiftsPage = ({ data: { gifts: { nodes: gifts } }  }) => {
                 target="_blank"
                 className="flutterwave"
               >
-                {/* <img src={flutterwaveLogo} alt="flutterwave logo" width="200" /> */}
+                <img src={flutterwaveLogo} alt="flutterwave logo" width="200" />
               </a>
             </div>
           </div>
