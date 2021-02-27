@@ -1,5 +1,5 @@
 {
-  "name": "Wedding-Website",
+  "name": "wedding-website",
   "private": true,
   "description": "Wedding website built by @omob",
   "version": "0.1.0",
@@ -8,7 +8,6 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@fontsource/galada": "^4.2.1",
-    "@fontsource/molle": "^4.2.1",
     "babel-plugin-styled-components": "^1.12.0",
     "dotenv-webpack": "^6.0.2",
     "eslint-plugin-import": "^2.22.1",
