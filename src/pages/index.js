@@ -207,7 +207,8 @@ const SectionTwo = styled.div`
     .story {
       display: flex;
       margin-bottom: 5em;
-      
+      align-items: center;
+
       img {
         width: 60%;
         max-width: 300px;
@@ -221,12 +222,22 @@ const SectionTwo = styled.div`
         font-size: 16px;
         text-transform: uppercase;
         font-weight: 100;
+        margin-bottom: 2em;
+        letter-spacing: 2px;
       }
       .writeup {
-        align-items: center;
-        justify-content: center;
         display: flex;
+        flex-direction: column;
 
+        h5 {
+          font-family: "Molle";
+          letter-spacing: 5px;
+          color: ${colors.secondary}
+        }
+        h5:not(first-child) {
+          margin-top: 2em;
+          margin-bottom: 10px
+        }
         p {
           font-weight: 100;
           font-size: 14px;
@@ -234,6 +245,7 @@ const SectionTwo = styled.div`
           width: 90%;
           line-height: 20px;
           margin: auto;
+          margin-bottom: 5px;
         }
       }
     }
@@ -246,13 +258,8 @@ const SectionTwo = styled.div`
           div {
             width: 100%;
           }
-          
           .writeup {
             display: block;
-
-            p {
-              margin-top: 2em;
-            }
           }
         }
       }
@@ -260,8 +267,6 @@ const SectionTwo = styled.div`
   }
 `
 const SectionThree = styled.div`
-  ${"" /* align-items: center; */}
-
   .proposalWrapper {
     background-color: ${colors.black};
     position: relative;
@@ -295,12 +300,9 @@ const SectionThree = styled.div`
 
       p {
         color: ${colors.dark};
-        font-family: "Open Sans";
-        font-size: 14px;
-        font-weight: 600;
+        font-size: 16px;
         letter-spacing: 1px;
-        line-height: 1.3em;
-        font-style: italic;
+        line-height: 1.5em;
       }
     }
 
@@ -359,10 +361,9 @@ const SectionFour = styled.div`
     }
 
     p {
-      font-size: 14px;
-      font-family: "Open Sans";
-      line-height: 1.6em;
-      font-weight: 600;
+      font-size: 15px;
+      ${'' /* font-family: "Open Sans"; */}
+      line-height: 1.5em;
     }
     a {
       color: inherit;
@@ -379,7 +380,7 @@ const SectionFour = styled.div`
       grid-template-columns: 1fr;
     }
 
-    .infoWrapper div,
+    .infoWrapper div{
       margin: 2em auto;
     }
   }
@@ -400,15 +401,6 @@ const SectionFour = styled.div`
     .infoWrapper div.rsvp {
       grid-column-start: 2
     }
-  }
-
-  ${
-    "" /* @media (min-width: 769px) {
-    .infoWrapper {
-      display: grid;
-      grid-column
-    }
-  } */
   }
 `
 const IndexPage = () => {
@@ -486,12 +478,7 @@ const bannerImage = useStaticQuery(graphql`
                 </div>
               </div>
             </div>
-            <div>
-              {/* <Img
-                fluid={bannerImage.file.childImageSharp.fluid}
-                alt="Samson&Tomi"
-              /> */}
-            </div>
+            <div></div>
           </SectionOne>
         </BackgroundImage>
         <SectionTwo>
@@ -509,31 +496,74 @@ const bannerImage = useStaticQuery(graphql`
                 <span className="name">Samson</span>
               </div>
               <div className="writeup">
+                <p>What started off as seeing an amazing image!!!! </p>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  a arcu eu massa luctus imperdiet sed a nisl. In eu laoreet
-                  dolor. Quisque arcu lacus, auctor sed sem sed, rutrum iaculis
-                  ante. Donec vitae lorem non nibh congue accumsan. Integer sit
-                  amet ipsum lorem. Vestibulum vehicula lacus scelerisque eros
-                  rhoncus, id porttitor sem vestibulum. Nam tincidunt, arcu eget
-                  pellentesque faucibus, augue lectus venenatis ante, non
-                  sodales ex arcu vitae nibh. Pellentesque habitant morbi
-                  tristique senectus
+                  We were introduced by a mutual friend via a telephone
+                  conversation after I saw a picture of her. I got her contact
+                  details with the intentions to call but never found the
+                  perfect time to make that call 2weeks down the line.{" "}
+                </p>
+                <p>
+                  {" "}
+                  We eventually spoke and for some reasons, I felt at peace
+                  talking to her. She had this different vibe on her thought
+                  process from our conversation. As a guy man, I swiftly set an
+                  appointment for us to meet and get to know each other well in
+                  the way of the Lord. Lol
                 </p>
               </div>
             </div>
             <div className="story">
               <div className="writeup md-only sm-none">
+                <h5>The Intro</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  a arcu eu massa luctus imperdiet sed a nisl. In eu laoreet
-                  dolor. Quisque arcu lacus, auctor sed sem sed, rutrum iaculis
-                  ante. Donec vitae lorem non nibh congue accumsan. Integer sit
-                  amet ipsum lorem. Vestibulum vehicula lacus scelerisque eros
-                  rhoncus, id porttitor sem vestibulum. Nam tincidunt, arcu eget
-                  pellentesque faucibus, augue lectus venenatis ante, non
-                  sodales ex arcu vitae nibh. Pellentesque habitant morbi
-                  tristique senectus
+                  I met Ade in the year 2015 while preparing for my NYSC program
+                  through one of my closest friends. She just got back from
+                  Lagos where she resides and was like one of Bisi’s (her
+                  boyfriend now fiancé) friends likes you and he’s going to call
+                  you oh so make sure you pick your call because you no get
+                  sense, lol.{" "}
+                </p>
+                <h5>First Conversation</h5>
+                <p>
+                  He (Ade) did not call and I totally forgot about it as well
+                  because I can be very bad when it comes to calls. After about
+                  two (2) weeks later, I remembered and asked my friend (Kenny)
+                  about him. I was like how far the person wey you talk say go
+                  call me? I no see any call oh and she told me she was going to
+                  ask her boyfriend when they talk.{" "}
+                </p>
+                <p>
+                  I got a call later from him and we spoke like we have known
+                  each other for years and we both agreed to see each other
+                  during the Muslim Eid break.
+                </p>
+                <h5>First Date</h5>
+                <p>
+                  We met as planned and our first date went by so fast because
+                  we connected, enjoyed each other’s company and spoke at lent.
+                  Part of what we discussed was what he wanted from the
+                  relationship (I gats ask am oh cos I no dey like assumptions
+                  and stories that touch, trust Yoruba demon now). However, He
+                  was very direct with his response, in his words, “I really
+                  like you; I want to get to know you and give love a chance”
+                  and that was it for me as I kept blushing.{" "}
+                </p>
+                <h5>The Proposal</h5>
+                <p>
+                  {" "}
+                  On the 21st of June 2020, I was supposed to attend a surprise
+                  birthday party with Ade in honor of my very close friend
+                  (Tosin)’s husband in Radisson hotel at GRA, Ikeja, Lagos. I
+                  was so shocked when I walked into a well-planned surprise
+                  party by himself (Ade) and my Close friends and family. I was
+                  still trying to put myself together to understand the whole
+                  event then I saw my Husband-Man on his knees. Wawu!!!!!!!! He
+                  popped the question, will u marry me? after a well structured,
+                  heart felt speech-and I said YES with a big SMILE on my face.
+                  We are so looking forward to starting this new chapter
+                  together, and can’t wait to celebrate with all of our
+                  favourite people.
                 </p>
               </div>
               <div>
@@ -541,16 +571,55 @@ const bannerImage = useStaticQuery(graphql`
                 <span className="name">Tomisin</span>
               </div>
               <div className="writeup sm-only md-none">
+                <h5>The Intro</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  a arcu eu massa luctus imperdiet sed a nisl. In eu laoreet
-                  dolor. Quisque arcu lacus, auctor sed sem sed, rutrum iaculis
-                  ante. Donec vitae lorem non nibh congue accumsan. Integer sit
-                  amet ipsum lorem. Vestibulum vehicula lacus scelerisque eros
-                  rhoncus, id porttitor sem vestibulum. Nam tincidunt, arcu eget
-                  pellentesque faucibus, augue lectus venenatis ante, non
-                  sodales ex arcu vitae nibh. Pellentesque habitant morbi
-                  tristique senectus
+                  I met Ade in the year 2015 while preparing for my NYSC program
+                  through one of my closest friends. She just got back from
+                  Lagos where she resides and was like one of Bisi’s (her
+                  boyfriend now fiancé) friends likes you and he’s going to call
+                  you oh so make sure you pick your call because you no get
+                  sense, lol.{" "}
+                </p>
+                <h5>First Conversation</h5>
+                <p>
+                  He (Ade) did not call and I totally forgot about it as well
+                  because I can be very bad when it comes to calls. After about
+                  two (2) weeks later, I remembered and asked my friend (Kenny)
+                  about him. I was like how far the person wey you talk say go
+                  call me? I no see any call oh and she told me she was going to
+                  ask her boyfriend when they talk.{" "}
+                </p>
+                <p>
+                  I got a call later from him and we spoke like we have known
+                  each other for years and we both agreed to see each other
+                  during the Muslim Eid break.
+                </p>
+                <h5>First Date</h5>
+                <p>
+                  We met as planned and our first date went by so fast because
+                  we connected, enjoyed each other’s company and spoke at lent.
+                  Part of what we discussed was what he wanted from the
+                  relationship (I gats ask am oh cos I no dey like assumptions
+                  and stories that touch, trust Yoruba demon now). However, He
+                  was very direct with his response, in his words, “I really
+                  like you; I want to get to know you and give love a chance”
+                  and that was it for me as I kept blushing.{" "}
+                </p>
+                <h5>The Proposal</h5>
+                <p>
+                  {" "}
+                  On the 21st of June 2020, I was supposed to attend a surprise
+                  birthday party with Ade in honor of my very close friend
+                  (Tosin)’s husband in Radisson hotel at GRA, Ikeja, Lagos. I
+                  was so shocked when I walked into a well-planned surprise
+                  party by himself (Ade) and my Close friends and family. I was
+                  still trying to put myself together to understand the whole
+                  event then I saw my Husband-Man on his knees. Wawu!!!!!!!! He
+                  popped the question, will u marry me? after a well structured,
+                  heart felt speech-and I said YES with a big SMILE on my face.
+                  We are so looking forward to starting this new chapter
+                  together, and can’t wait to celebrate with all of our
+                  favourite people.
                 </p>
               </div>
             </div>
