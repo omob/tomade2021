@@ -434,7 +434,7 @@ const bannerImage = useStaticQuery(graphql`
             <div>
               <span className="tagline">#tomade2021</span>
               <h2 className="brideName">
-                OLUWATOMISIN
+                TOMISIN
                 <img
                   src={require("../images/rose.png")}
                   width={41}
@@ -450,7 +450,7 @@ const bannerImage = useStaticQuery(graphql`
                 />
               </h2>
               <span>and</span>
-              <h2 className="groomName">SAMSON</h2>
+              <h2 className="groomName">ADEKUNLE</h2>
 
               <div className="mt-4 l-2">
                 <h2 className="getting-married position-relative">
@@ -493,7 +493,7 @@ const bannerImage = useStaticQuery(graphql`
             <div className="story">
               <div>
                 <img src={require("../images/samson.png")} alt="Sam" />
-                <span className="name">Samson</span>
+                <span className="name">ADEKUNLE</span>
               </div>
               <div className="writeup">
                 <p>What started off as seeing an amazing image!!!! </p>
