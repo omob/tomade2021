@@ -242,17 +242,24 @@ const GiftsPage = ({ data: { gifts: { nodes: gifts } }  }) => {
             <div>
               <h3>For Bank Transfer</h3>
               <div className="account-info">
-                <img src={require("../images/gtlogo.png")} alt="gtbLogo" />
+                <img
+                  src={require("../images/sterlingLogo.png")}
+                  width={80}
+                  height={40}
+                  alt="gtbLogo"
+                />
                 <div>
                   <>
                     <b>Account Name </b>- Oke Oluwatosin Roseline <br />
-                    <b>Account Number </b> - 0049784272
+                    <b>Account Number </b> - 0074019073 <br />
+                    <b>Bank Name</b> - Sterling Bank
                   </>
                 </div>
               </div>
             </div>
             <div>
               <h3>For Online Transfer</h3>
+              <p>Please click the logo below</p>
               <a
                 href="https://flutterwave.com/pay/tomade2021ljeo"
                 target="_blank"
