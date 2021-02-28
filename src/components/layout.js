@@ -24,7 +24,9 @@ text-align: center;
 padding-top: 20px;
 background-color: ${colors.black};
 font-size: 14px;
-
+p {
+  margin-bottom: 0;
+}
 a {
   color: ${colors.secondary};
 }
