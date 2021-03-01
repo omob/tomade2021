@@ -16,25 +16,25 @@ const CountdownWrapper = styled.div`
   justify-content: center;
 `
 const CountdownItem = styled.div`
-    color: ${colors.white};
-    font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    line-height: 30px;
-    margin: 10px;
-    padding-top: 10px;
-    position: relative;
-    width: 100px;
-    height: 100px;
-
-    & > span {
-      ${'' /* color: ${colors.secondary}; */}
-      font-size: 10px;
-      text-transform: uppercase;
-    }
-`;
+  color: ${colors.white};
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 30px;
+  margin: 10px;
+  padding-top: 10px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  font-family: "Galada", cursive;
+  & > span {
+    ${"" /* color: ${colors.secondary}; */}
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+`
 
 function Countdown({ timeTillDate, onComplete }) {
   const [days, setDays] = useState()

@@ -28,6 +28,11 @@ const Container = styled.div`
   & > section.headerWrapper {
     text-align: center;
 
+    .date,
+    .tagline {
+      font-family: "Galada", cursive;
+    }
+
     .tagline {
       color: ${colors.light};
       text-align: left !important;
@@ -37,26 +42,26 @@ const Container = styled.div`
 
     .brideName,
     .groomName {
-      font-weight: 400;
-      ${"" /* color: ${colors.secondary}; */}
-      font-size: 64px;
+      font-weight: 500;
+      font-size: 70px;
     }
 
     .brideName {
-      margin-top: 40px;
+      margin-top: 50px;
       margin-bottom: 0;
     }
 
     .brideName + span {
       color: ${colors.light};
-      font-family: "Molle";
-      font-size: 24px;
-      left: -40px;
+      font-family: inherit;
+      font-size: 36px;
+      left: -20px;
       position: relative;
       margin: 10px;
       display: block;
       font-weight: 100;
       color: ${colors.secondary};
+      font-family: "Ameyallinda Signatur";
     }
 
     .groomName {
@@ -72,8 +77,8 @@ const Container = styled.div`
     }
 
     .getting-married {
-      font-weight: 300;
-      font-size: 30px;
+      font-weight: 200;
+      font-size: 20px;
       color: ${colors.white};
       margin-bottom: 15px;
       width: fit-content;
@@ -90,15 +95,18 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-
     .headerWrapper:before,
     .headerWrapper:after {
       background-position: 70% 20% !important;
     }
   }
+
   .section-title {
     color: ${colors.secondary};
+    font-family: "Ameyallinda Signatur";
+      ${'' /* font-family: "Galada", cursive; */}
   }
+
   @media (max-width: 550px) {
     & {
       margin-top: 0;
@@ -110,7 +118,7 @@ const Container = styled.div`
       }
       .brideName,
       .groomName {
-        font-size: 42px;
+        font-size: 52px;
         letter-spacing: 2px;
         position: relative;
       }
@@ -216,11 +224,11 @@ const SectionTwo = styled.div`
       div {
         width: 50%;
       }
+      
       span.name {
         display: block;
-        font-family: "Molle";
-        font-size: 16px;
-        text-transform: uppercase;
+        font-family: "Galada", cursive;}
+        font-size: 20px;
         font-weight: 100;
         margin-bottom: 2em;
         letter-spacing: 2px;
@@ -230,18 +238,19 @@ const SectionTwo = styled.div`
         flex-direction: column;
 
         h5 {
-          font-family: "Molle";
+          ${"" /* font-family: "Molle"; */}
+          font-family: "Galada", cursive;
+          font-weight: 200;
           letter-spacing: 5px;
-          color: ${colors.secondary}
+          color: ${colors.secondary};
         }
         h5:not(first-child) {
           margin-top: 2em;
-          margin-bottom: 10px
+          margin-bottom: 10px;
         }
         p {
-          font-weight: 100;
+          font-weight: 400;
           font-size: 14px;
-          letter-spacing: 2px;
           width: 90%;
           line-height: 20px;
           margin: auto;
@@ -301,7 +310,7 @@ const SectionThree = styled.div`
       p {
         color: ${colors.dark};
         font-size: 16px;
-        letter-spacing: 1px;
+        ${'' /* letter-spacing: 1px; */}
         line-height: 1.5em;
       }
     }
@@ -355,14 +364,15 @@ const SectionFour = styled.div`
 
     h4 {
       font-size: 16px;
-      font-family: "Molle";
+      font-family: "Galada", cursive;
+      ${'' /* font-family: "Ameyallinda Signatur"; */}
       font-weight: 100;
-      color: ${colors.primary}
+      color: ${colors.primary};
     }
 
     p {
       font-size: 15px;
-      ${'' /* font-family: "Open Sans"; */}
+      ${"" /* font-family: "Open Sans"; */}
       line-height: 1.5em;
     }
     a {
@@ -380,7 +390,7 @@ const SectionFour = styled.div`
       grid-template-columns: 1fr;
     }
 
-    .infoWrapper div{
+    .infoWrapper div {
       margin: 2em auto;
     }
   }
@@ -399,7 +409,7 @@ const SectionFour = styled.div`
     }
 
     .infoWrapper div.rsvp {
-      grid-column-start: 2
+      grid-column-start: 2;
     }
   }
 `
@@ -434,7 +444,7 @@ const bannerImage = useStaticQuery(graphql`
             <div>
               <span className="tagline">#tomade2021</span>
               <h2 className="brideName">
-                TOMISIN
+                Oluwatomisin
                 <img
                   src={require("../images/rose.png")}
                   width={41}
@@ -444,30 +454,30 @@ const bannerImage = useStaticQuery(graphql`
                   style={{
                     position: "absolute",
                     right: -5,
-                    top: -55,
+                    top: -35,
                     transform: "rotate(45deg)",
                   }}
                 />
               </h2>
-              <span>and</span>
-              <h2 className="groomName">ADEKUNLE</h2>
+              <span>&</span>
+              <h2 className="groomName">Adekunle</h2>
 
               <div className="mt-4 l-2">
                 <h2 className="getting-married position-relative">
                   <img
                     src={require("../images/rose.png")}
-                    width={41}
-                    height={46}
+                    width={31}
+                    height={36}
                     alt=""
                     style={{
                       position: "absolute",
                       right: -5,
-                      top: -55,
+                      top: -35,
                       transform: "rotate(45deg)",
                     }}
                   />
                   {areMarried && "ARE MARRIED!!! "}
-                  {!areMarried && "ARE GETTING MARRIED"}
+                  {!areMarried && "Are Getting Married"}
                 </h2>
                 <span className="date">27th March 2021</span>
                 <div className="md-only">
@@ -488,12 +498,12 @@ const bannerImage = useStaticQuery(graphql`
             height="auto"
             style={{}}
           />
-          <h3 className="section-title">OUR LOVE STORY</h3>
+          <h3 className="section-title">Our Love Story</h3>
           <div className="section">
             <div className="story">
               <div>
                 <img src={require("../images/samson.png")} alt="Sam" />
-                <span className="name">ADEKUNLE</span>
+                <span className="name">Adekunle</span>
               </div>
               <div className="writeup">
                 <p>What started off as seeing an amazing image!!!! </p>
@@ -633,7 +643,7 @@ const bannerImage = useStaticQuery(graphql`
             height="auto"
             style={{}}
           />
-          <h3 className="section-title">THE PROPOSAL</h3>
+          <h3 className="section-title">The Proposal</h3>
           <div className="proposalWrapper">
             <div className="proposal-sm-only sm-only">
               <p> Oluwatomisin!!!! (God is enough for me) </p>
@@ -656,7 +666,8 @@ const bannerImage = useStaticQuery(graphql`
             />
 
             <div className="speech-box">
-              <h3>THE PROPOSAL SPEECH</h3>
+              {/* <h3>THE PROPOSAL SPEECH</h3> */}
+              <br/>
               <p> Oluwatomisin!!!! (God is enough for me) </p>
               <p>
                 You’ve been there through the “Not so good times”. You’ve
@@ -679,7 +690,7 @@ const bannerImage = useStaticQuery(graphql`
           </div>
         </SectionThree>
         <SectionFour>
-          <h3 className="section-title">THE WEDDING</h3>
+          <h3 className="section-title">The Wedding</h3>
           <img src={require("../images/sec4.png")} height="auto" style={{}} />
 
           <div className="infoWrapper">
