@@ -21,8 +21,9 @@ const HeaderSection = styled.div`
 
   h2 {
     font-size: 3em;
-    text-transform: uppercase;
     font-weight: 100;
+    color: ${colors.secondary};
+    margin-bottom: 1em;
   }
 
   h2 + p {
@@ -40,11 +41,10 @@ const HeaderSection = styled.div`
     font-family: "Galada";
     font-weight: 100;
 
-    .flutterwave:hover{
-      opacity: .6;
-      transition: .3s;
-    } 
-
+    .flutterwave:hover {
+      opacity: 0.6;
+      transition: 0.3s;
+    }
 
     h3 {
       text-transform: uppercase;

@@ -3,7 +3,7 @@ import { Gallery } from "gatsby-theme-gallery"
 import Layout from "../components/layout"
 import styled from '@emotion/styled';
 import SEO from '../components/seo';
-
+import colors from '../config/colors';
 
 const Container = styled.div`
   padding: 20px;
@@ -15,8 +15,8 @@ const HeaderSection = styled.div`
 
   h2 {
     font-size: 3em;
-    text-transform: uppercase;
     font-weight: 100;
+    color: ${colors.secondary}
   }
 `
 const MyGallery = () => (
