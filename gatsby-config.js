@@ -5,8 +5,12 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Tomade2021`,
-    description: `Oluwatomisin Roseline & Adekunle Samson`,
+    description: `Oluwatomisin Roseline & Adekunle Samson Wedding Website #tomade2021`,
     author: `@deevcorp`,
+    url: `https://tomade2021.netlify.app`,
+    twitterUsername: "@deevcorp",
+    image: "/twitter-card.png",
+    siteUrl: `https://tomade2021.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
