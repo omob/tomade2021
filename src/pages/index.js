@@ -313,7 +313,7 @@ const SectionThree = styled.div`
     }
 
     .speech-box:hover {
-      opacity: 0.2;
+      opacity: 0;
     }
   }
 
@@ -678,7 +678,7 @@ const bannerImage = useStaticQuery(graphql`
               </p>
               <img
                 src={require("../images/sec2.png")}
-                height="auto"
+                height={37.5}
                 width={50}
                 alt="logo"
               />

@@ -84,22 +84,22 @@ function Countdown({ timeTillDate, onComplete }) {
       <CountdownWrapper>
         <CountdownItem>
           <SVGCircle radius={daysRadius} />
-          {days || "-"}
+          {days || 0}
           <span>days</span>
         </CountdownItem>
         <CountdownItem>
           <SVGCircle radius={hoursRadius} />
-          {hours || "-"}
+          {hours || 0}
           <span>hours</span>
         </CountdownItem>
         <CountdownItem>
           <SVGCircle radius={minutesRadius} />
-          {minutes || "-"}
+          {minutes || 0}
           <span>minutes</span>
         </CountdownItem>
         <CountdownItem>
           <SVGCircle radius={secondsRadius} />
-          {seconds || "-"}
+          {seconds || 0}
           <span>seconds</span>
         </CountdownItem>
       </CountdownWrapper>
