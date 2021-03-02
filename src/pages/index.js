@@ -227,7 +227,7 @@ const SectionTwo = styled.div`
       
       span.name {
         display: block;
-        font-family: "Galada", cursive;}
+        font-family: "Galada", cursive;
         font-size: 20px;
         font-weight: 100;
         margin-bottom: 2em;
@@ -238,7 +238,6 @@ const SectionTwo = styled.div`
         flex-direction: column;
 
         h5 {
-          ${"" /* font-family: "Molle"; */}
           font-family: "Galada", cursive;
           font-weight: 200;
           letter-spacing: 5px;
@@ -249,10 +248,8 @@ const SectionTwo = styled.div`
           margin-bottom: 10px;
         }
         p {
-          font-weight: 400;
-          font-size: 14px;
+          font-size: 16px;
           width: 90%;
-          line-height: 20px;
           margin: auto;
           margin-bottom: 5px;
         }
