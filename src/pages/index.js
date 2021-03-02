@@ -281,7 +281,6 @@ const SectionThree = styled.div`
        width: 90%;
        margin: auto;
        padding: 2em 1em;
-       font-weight: 100;
        color: ${colors.light}
     } 
     
