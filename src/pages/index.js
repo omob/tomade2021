@@ -8,6 +8,7 @@ import colors from "../config/colors"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import BackgroundImage from "gatsby-background-image"
+import proposalVideo from "../assets/video/proposal.mp4";
 
 const Container = styled.div`
   .position-relative {
@@ -237,18 +238,17 @@ const SectionTwo = styled.div`
         display: flex;
         flex-direction: column;
 
-        h5 {
+        h4 {
           font-family: "Galada", cursive;
           font-weight: 200;
           letter-spacing: 5px;
           color: ${colors.secondary};
         }
-        h5:not(first-child) {
+        h4:not(first-child) {
           margin-top: 2em;
           margin-bottom: 10px;
         }
         p {
-          font-size: 16px;
           width: 90%;
           margin: auto;
           margin-bottom: 5px;
@@ -447,7 +447,7 @@ const bannerImage = useStaticQuery(graphql`
                   width={41}
                   height={46}
                   className="sm-only"
-                  alt=""
+                  alt="rose"
                   style={{
                     position: "absolute",
                     right: -5,
@@ -465,7 +465,7 @@ const bannerImage = useStaticQuery(graphql`
                     src={require("../images/rose.png")}
                     width={31}
                     height={36}
-                    alt=""
+                    alt="rose"
                     style={{
                       position: "absolute",
                       right: -5,
@@ -491,9 +491,9 @@ const bannerImage = useStaticQuery(graphql`
         <SectionTwo>
           <img
             src={require("../images/sec2.png")}
-            width="auto"
-            height="auto"
-            style={{}}
+            width={100}
+            height={75}
+            alt="img"
           />
           <h3 className="section-title">Our Love Story</h3>
           <div className="section">
@@ -522,7 +522,7 @@ const bannerImage = useStaticQuery(graphql`
             </div>
             <div className="story">
               <div className="writeup md-only sm-none">
-                <h5>The Intro</h5>
+                <h4>The Intro</h4>
                 <p>
                   I met Ade in the year 2015 while preparing for my NYSC program
                   through one of my closest friends. She just got back from
@@ -531,7 +531,7 @@ const bannerImage = useStaticQuery(graphql`
                   you oh so make sure you pick your call because you no get
                   sense, lol.{" "}
                 </p>
-                <h5>First Conversation</h5>
+                <h4>First Conversation</h4>
                 <p>
                   He (Ade) did not call and I totally forgot about it as well
                   because I can be very bad when it comes to calls. After about
@@ -545,7 +545,7 @@ const bannerImage = useStaticQuery(graphql`
                   each other for years and we both agreed to see each other
                   during the Muslim Eid break.
                 </p>
-                <h5>First Date</h5>
+                <h4>First Date</h4>
                 <p>
                   We met as planned and our first date went by so fast because
                   we connected, enjoyed each other’s company and spoke at lent.
@@ -556,7 +556,7 @@ const bannerImage = useStaticQuery(graphql`
                   like you; I want to get to know you and give love a chance”
                   and that was it for me as I kept blushing.{" "}
                 </p>
-                <h5>The Proposal</h5>
+                <h4>The Proposal</h4>
                 <p>
                   {" "}
                   On the 21st of June 2020, I was supposed to attend a surprise
@@ -578,7 +578,7 @@ const bannerImage = useStaticQuery(graphql`
                 <span className="name">Tomisin</span>
               </div>
               <div className="writeup sm-only md-none">
-                <h5>The Intro</h5>
+                <h4>The Intro</h4>
                 <p>
                   I met Ade in the year 2015 while preparing for my NYSC program
                   through one of my closest friends. She just got back from
@@ -587,7 +587,7 @@ const bannerImage = useStaticQuery(graphql`
                   you oh so make sure you pick your call because you no get
                   sense, lol.{" "}
                 </p>
-                <h5>First Conversation</h5>
+                <h4>First Conversation</h4>
                 <p>
                   He (Ade) did not call and I totally forgot about it as well
                   because I can be very bad when it comes to calls. After about
@@ -601,7 +601,7 @@ const bannerImage = useStaticQuery(graphql`
                   each other for years and we both agreed to see each other
                   during the Muslim Eid break.
                 </p>
-                <h5>First Date</h5>
+                <h4>First Date</h4>
                 <p>
                   We met as planned and our first date went by so fast because
                   we connected, enjoyed each other’s company and spoke at lent.
@@ -612,7 +612,7 @@ const bannerImage = useStaticQuery(graphql`
                   like you; I want to get to know you and give love a chance”
                   and that was it for me as I kept blushing.{" "}
                 </p>
-                <h5>The Proposal</h5>
+                <h4>The Proposal</h4>
                 <p>
                   {" "}
                   On the 21st of June 2020, I was supposed to attend a surprise
@@ -636,9 +636,9 @@ const bannerImage = useStaticQuery(graphql`
         <SectionThree className="mt-4">
           <img
             src={require("../images/sec3.png")}
-            alt={""}
-            height="auto"
-            style={{}}
+            alt={"logo"}
+            width={111}
+            height={98}
           />
           <h3 className="section-title">The Proposal</h3>
           <div className="proposalWrapper">
@@ -657,13 +657,12 @@ const bannerImage = useStaticQuery(graphql`
               </p>
             </div>
             <Video
-              videoSrcURL={require("../assets/video/proposal.mp4")}
+              videoSrcURL={proposalVideo}
               // videoSrcURL={"https://youtu.be/pYu5HkgNQGk"}
               videoTitle="Samson's Proposal"
             />
 
             <div className="speech-box">
-              {/* <h3>THE PROPOSAL SPEECH</h3> */}
               <br/>
               <p> Oluwatomisin!!!! (God is enough for me) </p>
               <p>
@@ -681,14 +680,18 @@ const bannerImage = useStaticQuery(graphql`
                 src={require("../images/sec2.png")}
                 height="auto"
                 width={50}
-                alt=""
+                alt="logo"
               />
             </div>
           </div>
         </SectionThree>
         <SectionFour>
           <h3 className="section-title">The Wedding</h3>
-          <img src={require("../images/sec4.png")} height="auto" style={{}} />
+          <img src={require("../images/sec4.png")}
+            width={200}
+            height={82}
+            alt="The Wedding Logo"
+           />
 
           <div className="infoWrapper">
             <div>
